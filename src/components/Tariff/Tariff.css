@@ -1,0 +1,65 @@
+.tariff {
+  @apply mt-28;
+
+  @apply md:mt-40;
+}
+
+.tariff__body {
+  @apply bg-cardGray rounded-[32px] flex flex-col items-center;
+
+  @apply p-0;
+
+  @apply md:px-8 md:pb-8 md:pt-7;
+}
+
+.tariff__top {
+  @apply flex w-full items-center justify-between;
+
+  @apply mb-6;
+
+  @apply md:mb-5;
+}
+
+.tariff__title {
+  @apply font-bold;
+
+  @apply text-3xl;
+
+  @apply md:text-4xl;
+}
+
+.tariff__tabs {
+  @apply flex items-center bg-white;
+
+  @apply p-2 rounded-2xl;
+
+  @apply md:p-1 md:rounded-xl;
+}
+
+.tariff__tab {
+  @apply font-bold border-transparent border-2 rounded-xl;
+
+  /* @apply border-mainBlue; */
+
+  @apply px-3 py-4;
+
+  @apply md:px-5 md:py-2;
+}
+
+.tariff__main {
+  @apply flex items-center mb-8;
+}
+
+.tariff__notes {
+  @apply flex flex-col text-blueGray items-start gap-y-5 text-base;
+}
+
+.tariff__button {
+  @apply font-bold cursor-pointer text-base transition-all bg-mainBlue text-white rounded-2xl border-2 border-mainBlue;
+
+  @apply py-2 px-5;
+
+  @apply sm:py-3 sm:px-6;
+
+  @apply hover:bg-transparent hover:text-black hover:shadow-inner hover:shadow-blue-300;
+}

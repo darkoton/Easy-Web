@@ -39,7 +39,7 @@
 }
 
 .skills__card {
-  @apply flex flex-col items-start bg-cardGray w-full p-8 rounded-[32px];
+  @apply flex flex-col items-start bg-cardGray w-full h-full p-8 rounded-[32px];
 
   @apply !max-w-full;
 

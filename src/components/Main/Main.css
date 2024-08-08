@@ -73,7 +73,7 @@
     @apply cursor-pointer;
   }
   .main__button:hover {
-    @apply bg-transparent text-black shadow-xl shadow-inner shadow-blue-300;
+    @apply bg-transparent text-black shadow-inner shadow-blue-300;
   }
 }
 

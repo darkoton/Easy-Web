@@ -56,9 +56,9 @@ export default function SkillsSection() {
       }, 400);
     }
     checkWindow();
-    window.addEventListener('orientationchange', checkWindow);
+    window.addEventListener('resize', checkWindow);
 
-    return () => window.removeEventListener('orientationchange', checkWindow);
+    return () => window.removeEventListener('resize', checkWindow);
   }, []);
 
   return (
@@ -106,9 +106,10 @@ export default function SkillsSection() {
           <Slider
             navigation={{ prev: prevRef, next: nextRef }}
             className="skills__slider"
-            slideWidth={300}
             units={'px'}
-            auto={false}
+            autoPlay={sliderAuto}
+            slidesPerView={3.5}
+            swipeable={false}
           >
             {cards.map(card => (
               <Skill key={card.title} {...card} />

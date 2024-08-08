@@ -1,0 +1,49 @@
+.benefit {
+  @apply mt-[90px];
+
+  @apply md:mt-[140px];
+}
+
+.benefit__body {
+  @apply flex flex-col items-center;
+}
+
+.benefit__title {
+  @apply font-bold relative text-center;
+
+  @apply text-[28px] leading-8 mb-8 max-w-[150px];
+
+  @apply md:text-4xl md:mb-12 md:max-w-full;
+}
+
+.benefit__head {
+  @apply absolute -right-24 -translate-y-1/2;
+
+  @apply top-1/2;
+
+  @apply top-0;
+}
+
+.benefit__cards {
+  @apply flex justify-center gap-4 flex-wrap;
+
+  @apply flex-col;
+
+  @apply md:flex-row;
+}
+
+.benefit__card {
+  @apply rounded-3xl w-full gap-y-4 bg-cardGray flex flex-col items-start;
+
+  @apply p-6 max-w-full;
+
+  @apply md:px-9 md:max-w-[350px];
+}
+
+.benefit__card-description {
+  @apply font-bold;
+
+  @apply text-lg;
+
+  @apply md:text-xl;
+}
