@@ -15,6 +15,7 @@ export default {
         mainBlue: '#004EFF',
         cardGray: '#F6F7FB',
         dark: '#0C0B0E',
+        blueGray: '#7288A5',
       },
     },
   },
