@@ -21,7 +21,7 @@ body::-webkit-scrollbar-track {
 }
 
 #root {
-  @apply min-h-full;
+  @apply min-h-full text-dark;
 }
 
 /*< " WRAPPER " >=============================================================================================================>*/

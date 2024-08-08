@@ -14,6 +14,7 @@ export default {
       colors: {
         mainBlue: '#004EFF',
         cardGray: '#F6F7FB',
+        dark: '#0C0B0E',
       },
     },
   },
