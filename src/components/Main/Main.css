@@ -36,8 +36,7 @@
 
   @apply sm:w-8/12;
 
-  @apply md:w-full
-
+  @apply md:w-full;
 }
 
 /* RIGHT */
@@ -83,7 +82,11 @@
 }
 
 .main__head-body {
-  @apply absolute z-10 flex justify-end right-0 -bottom-4;
+  @apply absolute z-10 flex justify-end;
+
+  @apply right-0 -bottom-4;
+
+  @apply lg:-bottom-20;
 }
 
 .main__head-body::after {
@@ -94,5 +97,4 @@
   @apply w-3/4;
 
   @apply lg:w-full;
-
 }

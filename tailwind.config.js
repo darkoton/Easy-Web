@@ -6,12 +6,14 @@ export default {
       maxWidth: {
         container: '1136px',
         '6.5/12': '54.16%',
+        '1/2': '50%',
       },
       width: {
         '6.5/12': '54.16%',
       },
       colors: {
         mainBlue: '#004EFF',
+        cardGray: '#F6F7FB',
       },
     },
   },

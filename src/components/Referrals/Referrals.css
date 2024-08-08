@@ -1,5 +1,5 @@
 .referrals {
-  @apply mt-24;
+  @apply mt-20;
 
   @apply lg:mt-32;
 }
@@ -20,7 +20,7 @@
   @apply lg:w-1/2;
 }
 
-.referrals__left:before{
+.referrals__left:before {
   @apply content-[''] bg-mainBlue w-48 h-48 rounded-full absolute -bottom-10 left-1/2 -translate-x-1/2 -z-10 blur-[264px];
 }
 
@@ -33,7 +33,9 @@
 }
 
 .referrals__people {
-  @apply max-w-6.5/12;
+  @apply max-w-full;
+
+  @apply sm:max-w-6.5/12;
 
   @apply md:max-w-full;
 }
