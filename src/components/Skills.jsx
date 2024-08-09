@@ -1,5 +1,4 @@
-import './Skills.css';
-import Slider from '@/components/UI/Slider/Slider';
+import Slider from '@/components/UI/Slider';
 import constructor from '@/assets/img/skills/constructor.png';
 import template from '@/assets/img/skills/template.png';
 import integrate from '@/assets/img/skills/integrate.png';
@@ -45,16 +44,15 @@ export default function SkillsSection() {
 
   useEffect(() => {
     function checkWindow() {
-      setSliderAuto(false);
-
       setTimeout(() => {
         if (window.outerWidth <= 768) {
           setSliderAuto(false);
         } else {
           setSliderAuto(true);
         }
-      }, 400);
+      }, 100);
     }
+
     checkWindow();
     window.addEventListener('resize', checkWindow);
 
@@ -62,16 +60,19 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section className="skills">
+    <section className="skills mt-[70px] md:mt-[160px]">
       <div className="skills__container _container">
-        <div className="skills__body">
-          <div className="skills__top">
-            <h2 className="skills__title">
-              Что умеет Easy<span className="blue-text">Web</span>?
+        <div className="skills__body flex flex-col">
+          <div className="skills__top flex items-center px-3 justify-center mb-8 md:px-8 md:justify-between md:mb-12">
+            <h2 className="skills__title font-bold text-2xl md:text-4xl">
+              Что умеет Easy<span className="text-mainBlue">Web</span>?
             </h2>
 
-            <div className="skills__navigation">
-              <button className="skills__button group" ref={prevRef}>
+            <div className="skills__navigation items-center gap-x-2 hidden md:flex">
+              <button
+                className="skills__button group flex items-center justify-center w-10 h-10 rounded-xl bg-mainBlue disabled:bg-[#F6F7FB]"
+                ref={prevRef}
+              >
                 <svg
                   width="8"
                   height="14"
@@ -86,7 +87,10 @@ export default function SkillsSection() {
                 </svg>
               </button>
 
-              <button className="skills__button group" ref={nextRef}>
+              <button
+                className="skills__button group flex items-center justify-center w-10 h-10 rounded-xl bg-mainBlue disabled:bg-[#F6F7FB]"
+                ref={nextRef}
+              >
                 <svg
                   width="8"
                   height="14"
@@ -105,9 +109,11 @@ export default function SkillsSection() {
 
           <Slider
             navigation={{ prev: prevRef, next: nextRef }}
-            className="skills__slider"
+            className="skills__slider relative after:hidden after:content-[''] after:absolute after:-right-2 after:top-0 after:h-full after:w-44 after:bg-gradient-to-r after:from-transparent after:to-white md:after:block"
             units={'px'}
+            adaptiv="gap-y-4 flex-wrap justify-center md:flex-nowrap md:justify-stretch"
             autoPlay={sliderAuto}
+            reset={!sliderAuto}
             slidesPerView={3.5}
             swipeable={false}
             spaceBetween={20}
@@ -129,12 +135,19 @@ Skill.propTypes = {
 };
 function Skill({ title, description, img, ...props }) {
   return (
-    <div className="skills__card" {...props}>
-      <div className="skills__card-top">
-        <img src={img} alt="logo" className="skills__card-img" />
-        <h3 className="skills__card-title">{title}</h3>
+    <div
+      className="skills__card flex flex-col items-start bg-cardGray w-full h-full p-8 rounded-[32px] !max-w-full sm:!max-w-80"
+      {...props}
+    >
+      <div className="skills__card-top flex  gap-y-4 flex-row items-center gap-x-4 mb-3 md:flex-col md:items-start md:mb-4">
+        <img src={img} alt="logo" className="skills__card-img max-w-full" />
+        <h3 className="skills__card-title font-bold text-lg leading-5 md:text-2xl md:leading-6">
+          {title}
+        </h3>
       </div>
-      <p className="skills__card-description">{description}</p>
+      <p className="skills__card-description text-sm leading-4 md:text-base">
+        {description}
+      </p>
     </div>
   );
 }

@@ -6,7 +6,6 @@ import {
   useCallback,
   useRef,
 } from 'react';
-import './Slider.css';
 import propTypes from 'prop-types';
 
 Slider.propTypes = {
@@ -18,6 +17,7 @@ Slider.propTypes = {
   pagination: propTypes.bool,
   spaceBetween: propTypes.number,
   adaptiv: propTypes.string,
+  reset: propTypes.bool,
 };
 
 export default function Slider({
@@ -29,16 +29,16 @@ export default function Slider({
   pagination = false,
   spaceBetween = 0,
   adaptiv = '',
+  reset = false,
   ...props
 }) {
   const [slides, setSlides] = useState([]);
   const [offset, setOffset] = useState(0);
-  const animationInterval = useRef(null);
-  const animationTimeout = useRef(null);
   const [slideWidth, setSlideWidth] = useState(100);
   const [active, setActive] = useState(1);
   const [maxActive, setMaxActive] = useState(0);
   const [maxOffset, setMaxOffset] = useState(0);
+  const autoplayInterval = useRef(null);
 
   const windowRef = useRef(null);
 
@@ -52,7 +52,7 @@ export default function Slider({
           navigation.next.current.disabled = false;
         }
 
-        if (currentActive == 0 && navigation.prev) {
+        if (currentActive == 1 && navigation.prev) {
           navigation.prev.current.disabled = true;
         } else if (currentActive == maxActive && navigation.next) {
           navigation.next.current.disabled = true;
@@ -68,7 +68,7 @@ export default function Slider({
         const newOffset = currentOffset - slideWidth;
         if (currentOffset <= maxOffset && reset) {
           setActive(1);
-          disableNavigation(0);
+          disableNavigation(1);
           return 0;
         } else if (currentOffset > maxOffset) {
           setActive(active + 1);
@@ -94,37 +94,19 @@ export default function Slider({
     });
   }, [slideWidth, active, disableNavigation]);
 
-  const startAutoSwipe = useCallback(() => {
-    animationInterval.current = setInterval(() => {
-      swipeRight(true);
-    }, 3000);
-  }, [swipeRight]);
-
-  function stopAutoSwipe() {
-    clearInterval(animationInterval.current);
-  }
-
-  const resetAnimation = useCallback(() => {
-    if (animationTimeout.current) {
-      clearTimeout(animationTimeout.current);
-    }
-
-    stopAutoSwipe();
-
-    animationTimeout.current = setTimeout(() => {
-      startAutoSwipe();
-    }, 3000);
-  }, [startAutoSwipe]);
-
   const handleLeftArrowClickAndSwipe = useCallback(() => {
-    resetAnimation();
+    if (autoplayInterval.current) {
+      clearInterval(autoplayInterval.current);
+    }
     swipeLeft();
-  }, [swipeLeft, resetAnimation]);
+  }, [swipeLeft]);
 
   const handleRightArrowClickAndSwipe = useCallback(() => {
-    resetAnimation();
+    if (autoplayInterval.current) {
+      clearInterval(autoplayInterval.current);
+    }
     swipeRight();
-  }, [swipeRight, resetAnimation]);
+  }, [swipeRight]);
 
   useEffect(() => {
     const style = {
@@ -141,7 +123,7 @@ export default function Slider({
 
     setMaxActive(Number(slidesPerView) > 1 ? slides.length - 2 : slides.length);
 
-    disableNavigation(0);
+    disableNavigation(1);
 
     if (slidesPerView === 'auto') {
       style.minWidth = 'auto';
@@ -168,14 +150,6 @@ export default function Slider({
       navigation.next.current.onclick = handleRightArrowClickAndSwipe;
     }
   }, [navigation, handleLeftArrowClickAndSwipe, handleRightArrowClickAndSwipe]);
-
-  useEffect(() => {
-    if (slides.length && autoPlay) {
-      startAutoSwipe();
-    }
-
-    return () => stopAutoSwipe();
-  }, [autoPlay, slides.length, startAutoSwipe]);
 
   useEffect(() => {
     if (windowRef.current && swipeable) {
@@ -224,17 +198,33 @@ export default function Slider({
     return;
   }, [handleLeftArrowClickAndSwipe, handleRightArrowClickAndSwipe, swipeable]);
 
+  useEffect(() => {
+    if (slides.length && autoPlay) {
+      autoplayInterval.current = setInterval(() => {
+        swipeRight(true);
+      }, 3000);
+
+      return () => clearInterval(autoplayInterval.current);
+    } else if (reset) {
+      setOffset(0);
+      setActive(1);
+    }
+  }, [swipeRight, autoPlay, slides, reset]);
+
   return (
-    <div className="slider" {...props}>
-      <div className="slider-window" ref={windowRef}>
+    <div className="slider w-full h-auto flex items-center" {...props}>
+      <div
+        className="slider-window w-full h-full overflow-hidden"
+        ref={windowRef}
+      >
         <div
           className={[
-            'slider-wrapper',
-            `gap-x-[${spaceBetween}px]`,
+            'slider-wrapper  h-full flex transition-transform duration-300 ease-in-out select-none cursor-grab',
             adaptiv,
           ].join(' ')}
           style={{
             transform: `translateX(${offset}%)`,
+            columnGap: `${spaceBetween}px`,
           }}
         >
           {slides}

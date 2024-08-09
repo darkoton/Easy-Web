@@ -1,4 +1,3 @@
-import './Advantages.css';
 import domain from '@/assets/img/advantages/domain.png';
 import team from '@/assets/img/advantages/team.png';
 import tests from '@/assets/img/advantages/tests.png';
@@ -36,12 +35,14 @@ const cards = [
 
 export default function AdvantagesSection() {
   return (
-    <section className="advantages">
-      <div className="advantages__container">
+    <section className="advantages mt-16 md:mt-32">
+      <div className="advantages__container w-full max-w-[944px] mx-auto px-4">
         <div className="advantages__body">
-          <h2 className="advantages__title">Наши преимущества</h2>
+          <h2 className="advantages__title text-center font-bold text-[28px] mb-8 md:text-4xl md:mb-12">
+            Наши преимущества
+          </h2>
 
-          <div className="advantages__grid">
+          <div className="advantages__grid grid gap-4 grid-cols-10 grid-flow-dense">
             {cards.map(card => (
               <Card key={card.title} {...card} />
             ))}
@@ -61,11 +62,20 @@ Card.propTypes = {
 
 function Card({ img, title, description, width }) {
   return (
-    <div className={['advantages__card', width].join(' ')}>
-      <img src={img} alt="" className="advantages__card-img" />
+    <div
+      className={[
+        'advantages__card flex flex-col items-start bg-[#F6F7FB] rounded-[24px] p-6 md:rounded-[32px] md:p-8',
+        width,
+      ].join(' ')}
+    >
+      <img src={img} alt="" className="advantages__card-img max-w-full mb-4" />
 
-      <h4 className="advantages__card-title">{title}</h4>
-      <p className="advantages__card-desctiption">{description}</p>
+      <h4 className="advantages__card-title font-bold mb-3 text-lg md:mb-4 md:text-2xl">
+        {title}
+      </h4>
+      <p className="advantages__card-desctiption text-sm md:text-base">
+        {description}
+      </p>
     </div>
   );
 }

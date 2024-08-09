@@ -1,3 +1,5 @@
+import plugin from 'tailwindcss/plugin';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -11,6 +13,9 @@ export default {
       width: {
         '6.5/12': '54.16%',
       },
+      fontFamily: {
+        Geologica: 'Geologica Roman',
+      },
       colors: {
         mainBlue: '#004EFF',
         cardGray: '#F6F7FB',
@@ -19,5 +24,16 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '._container': {
+          width: '100%',
+          maxWidth: '1136px',
+          margin: '0 auto',
+          padding: '0 16px',
+        },
+      });
+    }),
+  ],
 };

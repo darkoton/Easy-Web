@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer fonts {
+  @font-face {
+    font-family: 'Geologica Roman';
+    src: url('@/assets/fonts/Geologica-Regular.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Geologica Roman';
+    src: url('@/assets/fonts/Geologica-Medium.ttf') format('TrueType');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Geologica Roman';
+    src: url('@/assets/fonts/Geologica-Bold.ttf') format('TrueType');
+    font-weight: 700;
+    font-style: normal;
+  }
+}
+
+@layer scroll {
+  body::-webkit-scrollbar {
+    @apply w-1;
+  }
+  body::-webkit-scrollbar-thumb {
+    @apply bg-blue-600 rounded-xl;
+  }
+  body::-webkit-scrollbar-track {
+    @apply bg-blue-200;
+  }
+}
