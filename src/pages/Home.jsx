@@ -6,7 +6,7 @@ import TariffSection from '@/components/Tariff/Tariff';
 import BenefitSection from '@/components/Benefit/Benefit';
 import QuestionsSection from '@/components/Questions/Questions';
 
-export default function Homeage() {
+export default function HomePage() {
   return (
     <div className="page">
       <MainSection />
