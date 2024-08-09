@@ -4,6 +4,7 @@ import ReferralsSection from '@/components/Referrals/Referrals';
 import AdvantagesSection from '@/components/Advantages/Advantages';
 import TariffSection from '@/components/Tariff/Tariff';
 import BenefitSection from '@/components/Benefit/Benefit';
+import QuestionsSection from '@/components/Questions/Questions';
 
 export default function Homeage() {
   return (
@@ -14,6 +15,7 @@ export default function Homeage() {
       <AdvantagesSection />
       {/* <TariffSection /> */}
       <BenefitSection />
+      <QuestionsSection />
     </div>
   );
 }
