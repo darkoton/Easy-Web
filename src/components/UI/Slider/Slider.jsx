@@ -15,6 +15,9 @@ Slider.propTypes = {
   navigation: propTypes.object,
   slidesPerView: propTypes.oneOfType([propTypes.string, propTypes.number]),
   swipeable: propTypes.bool,
+  pagination: propTypes.bool,
+  spaceBetween: propTypes.number,
+  adaptiv: propTypes.string,
 };
 
 export default function Slider({
@@ -23,6 +26,9 @@ export default function Slider({
   navigation,
   slidesPerView = 1,
   swipeable = true,
+  pagination = false,
+  spaceBetween = 0,
+  adaptiv = '',
   ...props
 }) {
   const [slides, setSlides] = useState([]);
@@ -30,29 +36,49 @@ export default function Slider({
   const animationInterval = useRef(null);
   const animationTimeout = useRef(null);
   const [slideWidth, setSlideWidth] = useState(100);
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
+  const [maxActive, setMaxActive] = useState(0);
+  const [maxOffset, setMaxOffset] = useState(0);
+
   const windowRef = useRef(null);
+
+  const disableNavigation = useCallback(
+    currentActive => {
+      if (navigation) {
+        if (navigation.prev) {
+          navigation.prev.current.disabled = false;
+        }
+        if (navigation.next) {
+          navigation.next.current.disabled = false;
+        }
+
+        if (currentActive == 0 && navigation.prev) {
+          navigation.prev.current.disabled = true;
+        } else if (currentActive == maxActive && navigation.next) {
+          navigation.next.current.disabled = true;
+        }
+      }
+    },
+    [navigation, maxActive],
+  );
 
   const swipeRight = useCallback(
     reset => {
       setOffset(currentOffset => {
         const newOffset = currentOffset - slideWidth;
-
-        const maxOffset = Number(slidesPerView)
-          ? -(slideWidth * (slides.length - 1) - slideWidth * 2)
-          : -(slideWidth * (slides.length - 1));
-
         if (currentOffset <= maxOffset && reset) {
-          setActive(0);
+          setActive(1);
+          disableNavigation(0);
           return 0;
         } else if (currentOffset > maxOffset) {
           setActive(active + 1);
         }
 
+        disableNavigation(active + 1);
         return Math.max(newOffset, maxOffset);
       });
     },
-    [slides, slideWidth, slidesPerView, active],
+    [maxOffset, slideWidth, active, disableNavigation],
   );
 
   const swipeLeft = useCallback(() => {
@@ -63,9 +89,10 @@ export default function Slider({
         setActive(active - 1);
       }
 
+      disableNavigation(active - 1);
       return Math.min(newOffset, 0);
     });
-  }, [slideWidth, active]);
+  }, [slideWidth, active, disableNavigation]);
 
   const startAutoSwipe = useCallback(() => {
     animationInterval.current = setInterval(() => {
@@ -106,6 +133,16 @@ export default function Slider({
       height: 'auto',
     };
 
+    setMaxOffset(
+      Number(slidesPerView) > 1
+        ? -(slideWidth * (slides.length - 1) - slideWidth * 2)
+        : -(slideWidth * (slides.length - 1)),
+    );
+
+    setMaxActive(Number(slidesPerView) > 1 ? slides.length - 2 : slides.length);
+
+    disableNavigation(0);
+
     if (slidesPerView === 'auto') {
       style.minWidth = 'auto';
       setSlideWidth(null);
@@ -122,7 +159,7 @@ export default function Slider({
         });
       }),
     );
-  }, [children, slidesPerView]);
+  }, [children, slidesPerView, slideWidth, slides.length, disableNavigation]);
 
   useEffect(() => {
     if (navigation) {
@@ -135,12 +172,10 @@ export default function Slider({
   useEffect(() => {
     if (slides.length && autoPlay) {
       startAutoSwipe();
-    } else {
-      setOffset(0);
     }
 
     return () => stopAutoSwipe();
-  }, [autoPlay, swipeRight, slides, startAutoSwipe]);
+  }, [autoPlay, slides.length, startAutoSwipe]);
 
   useEffect(() => {
     if (windowRef.current && swipeable) {
@@ -171,13 +206,15 @@ export default function Slider({
         }
       };
 
-      sliderWindow.addEventListener('touchstart', setXMob);
+      sliderWindow.addEventListener('touchstart', setXMob, { passive: true });
       sliderWindow.addEventListener('touchend', checkDirectionMob);
       sliderWindow.addEventListener('mousedown', setXPC);
       sliderWindow.addEventListener('mouseup', checkDirectionPC);
 
       return () => {
-        sliderWindow.removeEventListener('touchstart', setXMob);
+        sliderWindow.removeEventListener('touchstart', setXMob, {
+          passive: true,
+        });
         sliderWindow.removeEventListener('touchend', checkDirectionMob);
         sliderWindow.removeEventListener('mousedown', setXPC);
         sliderWindow.removeEventListener('mouseup', checkDirectionPC);
@@ -191,13 +228,31 @@ export default function Slider({
     <div className="slider" {...props}>
       <div className="slider-window" ref={windowRef}>
         <div
-          className="slider-wrapper"
+          className={[
+            'slider-wrapper',
+            `gap-x-[${spaceBetween}px]`,
+            adaptiv,
+          ].join(' ')}
           style={{
             transform: `translateX(${offset}%)`,
           }}
         >
           {slides}
         </div>
+
+        {pagination && (
+          <div className="slider-pagination w-full flex justify-center gap-x-2 mt-6">
+            {Array.from({ length: maxActive }).map((i, index) => (
+              <div
+                key={index}
+                className={[
+                  'slider-pagination-dot w-4 h-4 rounded-full bg-[#F6F7FB]',
+                  active == index + 1 ? '!bg-mainBlue' : '',
+                ].join(' ')}
+              ></div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

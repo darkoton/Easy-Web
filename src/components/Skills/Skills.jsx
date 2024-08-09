@@ -1,5 +1,5 @@
 import './Skills.css';
-import Slider from '@/components/Slider/Slider';
+import Slider from '@/components/UI/Slider/Slider';
 import constructor from '@/assets/img/skills/constructor.png';
 import template from '@/assets/img/skills/template.png';
 import integrate from '@/assets/img/skills/integrate.png';
@@ -110,6 +110,7 @@ export default function SkillsSection() {
             autoPlay={sliderAuto}
             slidesPerView={3.5}
             swipeable={false}
+            spaceBetween={20}
           >
             {cards.map(card => (
               <Skill key={card.title} {...card} />

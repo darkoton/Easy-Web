@@ -1,28 +1,86 @@
 import './Tariff.css';
+import yes from '@/assets/img/tariff/yes.svg';
+import no from '@/assets/img/tariff/no.svg';
+import tariffs from './tariff.js';
+import Slider from '@/components/UI/Slider/Slider.jsx';
+import { useState, useEffect } from 'react';
+
+const tabs = [
+  {
+    value: '1',
+    text: '1 мес.',
+    discount: null,
+  },
+  {
+    value: '3',
+    text: '3 мес.',
+    discount: '-10%',
+  },
+  {
+    value: '6',
+    text: '6 мес.',
+    discount: '-20%',
+  },
+  {
+    value: '12',
+    text: '12 мес.',
+    discount: '-30%',
+  },
+];
 
 export default function TariffSection() {
+  const [duration, setDuration] = useState('1');
+  const [swipeable, setSwipeable] = useState(true);
+
+  function selectTime(time) {
+    return () => {
+      setDuration(time);
+    };
+  }
+
+  useEffect(() => {
+    function checkWindow() {
+      setTimeout(() => {
+        if (window.outerWidth <= 1024) {
+          setSwipeable(true);
+        } else {
+          setSwipeable(false);
+        }
+      }, 400);
+    }
+    checkWindow();
+    window.addEventListener('resize', checkWindow);
+
+    return () => window.removeEventListener('resize', checkWindow);
+  }, []);
+
   return (
     <section className="tariff">
       <div className="tariff__container _container">
         <div className="tariff__body">
           <div className="tariff__top">
             <h2 className="tariff__title">Тарифы</h2>
-            <div className="tariff__tabs">
-              <button className="tariff__tab">1 месяц</button>
-              <button className="tariff__tab">
-                3 месяца <span className="blue-text">-10%</span>
-              </button>
-              <button className="tariff__tab">
-                6 месяцев <span className="blue-text">-20%</span>
-              </button>
-              <button className="tariff__tab">
-                12 месяцев <span className="blue-text">-30%</span>
-              </button>
+            <div className="tariff__tabs lg:gap-x-2 flex justify-between  p-2 rounded-2xl bg-cardGray text-sm lg:p-1 lg:rounded-xl lg:text-base lg:bg-white w-full lg:w-auto">
+              {tabs.map(tab => (
+                <button
+                  key={tab.value}
+                  className={[
+                    'tariff__tab w-full lg:w-auto flex flex-wrap max-[520px]:flex-col items-center justify-center gap-x-2  font-bold border-transparent border-[1px] rounded-xl px-3 py-2 lg:px-5 lg:py-1',
+                    duration == tab.value ? '!border-mainBlue' : null,
+                  ].join(' ')}
+                  onClick={selectTime(tab.value)}
+                >
+                  {tab.text}
+                  {tab.discount && (
+                    <span className="blue-text">{tab.discount}</span>
+                  )}
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className="tariff__main">
-            <div className="tariff__notes">
+          <div className="tariff__main w-full flex items-center mb-8 gap-x-[15px]">
+            <div className="tariff__notes whitespace-nowrap flex-col text-blueGray items-start gap-y-4 text-base hidden lg:flex leading-[1.4] mt-4">
               <span className="tariff__note">Сайтов</span>
               <span className="tariff__note">Шаблоны лендингов</span>
               <span className="tariff__note">Логирование лидов</span>
@@ -34,12 +92,107 @@ export default function TariffSection() {
               <span className="tariff__note">А/B тестирование</span>
               <span className="tariff__note">Командный режим</span>
             </div>
-            <div className="tariff__plans">
-              <div className="tariff__plan"></div>
-            </div>
+
+            {swipeable ? (
+              <Slider
+                pagination={true}
+                className="tariff__plans w-full"
+                adaptiv=""
+              >
+                {tariffs.map(tariff => (
+                  <div
+                    key={tariff.tariffName}
+                    className="tariff__plan w-full flex gap-y-4 flex-col items-center px-5 lg:px-3 py-4 rounded-3xl bg-cardGray lg:bg-white"
+                  >
+                    <h4 className="plan__title font-bold text-2xl">
+                      {tariff.tariffName}
+                    </h4>
+                    <ul className="plan__offer w-full rounded-2xl bg-white lg:bg-cardGray text-blueGray flex-flex-col">
+                      {tariff.features.map(feature => (
+                        <li
+                          key={feature.title}
+                          className="plan__offer-item border-t-[1px]  border-[#E7E7E7] first:border-transparent py-3 px-4 flex items-center gap-x-6"
+                        >
+                          <div className="plan__offer-value font-bold text-base flex justify-center lg:w-full">
+                            {feature.value && (
+                              <div className="w-4 text-center">
+                                {feature.value}
+                              </div>
+                            )}
+
+                            {feature.has !== null && (
+                              <div className="w-4 text-center">
+                                <img
+                                  src={feature.has ? yes : no}
+                                  className="w-4 max-w-full"
+                                  alt=""
+                                />
+                              </div>
+                            )}
+                          </div>
+                          <h5 className="plan__offer-title text-sm lg:hidden">
+                            {feature.title}
+                          </h5>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="plan__price font-bold text-2xl">
+                      {tariff.price[duration]}
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            ) : (
+              <div className="tarrif__plans w-full flex gap-x-4">
+                {tariffs.map(tariff => (
+                  <div
+                    key={tariff.tariffName}
+                    className="tariff__plan w-full flex gap-y-4 flex-col items-center px-5 lg:px-3 py-4 rounded-3xl bg-cardGray lg:bg-white"
+                  >
+                    <h4 className="plan__title font-bold text-2xl">
+                      {tariff.tariffName}
+                    </h4>
+                    <ul className="plan__offer w-full rounded-2xl bg-white lg:bg-cardGray text-blueGray flex-flex-col">
+                      {tariff.features.map(feature => (
+                        <li
+                          key={feature.title}
+                          className="plan__offer-item border-t-[1px]  border-[#E7E7E7] first:border-transparent py-3 px-4 flex items-center gap-x-6"
+                        >
+                          <div className="plan__offer-value font-bold text-base flex justify-center lg:w-full">
+                            {feature.value && (
+                              <div className="text-center">{feature.value}</div>
+                            )}
+
+                            {feature.has !== null && (
+                              <div className="w-4 text-center">
+                                <img
+                                  src={feature.has ? yes : no}
+                                  className="max-w-full"
+                                  alt=""
+                                />
+                              </div>
+                            )}
+                          </div>
+                          <h5 className="plan__offer-title text-sm lg:hidden">
+                            {feature.title}
+                          </h5>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="plan__price font-bold text-2xl">
+                      {tariff.price[duration]}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
-          <div className="tariff__button">Попробовать бесплатно</div>
+          <div className="tariff__button font-bold cursor-pointer text-base transition-all bg-mainBlue text-white rounded-2xl border-2 border-mainBlue py-2 px-5 sm:py-3 sm:px-6 hover:bg-transparent hover:text-black hover:shadow-inner hover:shadow-blue-300">
+            Попробовать бесплатно
+          </div>
         </div>
       </div>
     </section>
