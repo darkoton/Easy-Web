@@ -1,17 +1,14 @@
 import '@/assets/style/style.css';
-// import Home from '@/pages/Home';
-import Login from '@/pages/Login';
 import Footer from '@/components/Footer/Footer';
+import { RouterProvider } from 'react-router-dom';
+import router from '@/router';
 
 function App() {
   return (
     <div className="wrapper w-full ">
       {/* Header */}
       <main className="content">
-        {
-          <Login />
-          /* <Home /> */
-        }
+        <RouterProvider router={router()} />
       </main>
       <Footer />
     </div>

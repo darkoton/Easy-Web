@@ -5,7 +5,8 @@ import noView from '@/assets/img/auth/no-view.svg';
 import { useState } from 'react';
 
 export default function LoginPage() {
-  const [viewPassword, setViewPassword] = useState(false);
+  const [viewPassword, setViewPassword] = useState(true);
+  const [viewConfirmPassword, setViewConfirmPassword] = useState(false);
 
   return (
     <div className="page min-h-full flex items-center relative">
@@ -27,8 +28,22 @@ export default function LoginPage() {
                   className="login__form w-full form flex flex-col items-center p-6 lg:p-8 bg-cardGray rounded-[32px] gap-y-3 lg:gap-y-4"
                 >
                   <h2 className="form__title text-center font-bold text-2xl">
-                    Вход
+                    Регистрация
                   </h2>
+
+                  <div className="form__field  flex flex-col gap-y-3 w-full">
+                    <label htmlFor="name" className="form__field-name text-sm">
+                      Имя
+                    </label>
+                    <div className="form__field-input-body flex items-center gap-x-3 justify-between px-4 py-3 bg-white rounded-2xl">
+                      <input
+                        type="text"
+                        id="name"
+                        placeholder="Введите имя"
+                        className="form__field-input w-full text-sm outline-none"
+                      />
+                    </div>
+                  </div>
 
                   <div className="form__field  flex flex-col gap-y-3 w-full">
                     <label htmlFor="email" className="form__field-name text-sm">
@@ -67,16 +82,34 @@ export default function LoginPage() {
                     </div>
                   </div>
 
-                  <a
-                    href="#"
-                    className="form__forgot cursor-pointer text-mainBlue mb-3 lg:mb-4 transition-colors hover:text-black"
-                  >
-                    Забыли пароль?
-                  </a>
+                  <div className="form__field  flex flex-col gap-y-3 w-full">
+                    <label
+                      htmlFor="confirmPassword"
+                      className="form__field-name text-sm"
+                    >
+                      Подтвердите пароль
+                    </label>
+                    <div className="form__field-input-body flex items-center gap-x-3 justify-between px-4 py-3 bg-white rounded-2xl">
+                      <input
+                        type={viewConfirmPassword ? 'text' : 'password'}
+                        id="confirmPassword"
+                        placeholder="Введите пароль"
+                        className="form__field-input w-full text-sm outline-none"
+                      />
+                      <img
+                        src={viewConfirmPassword ? view : noView}
+                        alt=""
+                        className="from__icon cursor-pointer"
+                        onClick={() =>
+                          setViewConfirmPassword(!viewConfirmPassword)
+                        }
+                      />
+                    </div>
+                  </div>
 
                   <div className="form__buttons flex flex-col items-center gap-y-3 w-full">
                     <button className="form__button w-full font-bold border-2 border-mainBlue bg-mainBlue text-sm rounded-2xl py-3 text-white transition-all hover:bg-transparent hover:text-dark">
-                      Войти
+                      Зарегистрироваться
                     </button>
                     <button className="form__button-telegram flex items-center justify-between w-full font-bold pl-4 pr-2 border-2 border-mainBlue text-sm rounded-2xl py-2 text-dark transition-transform  hover:scale-[0.99]">
                       Войти через Telegram
@@ -89,11 +122,11 @@ export default function LoginPage() {
                   </div>
 
                   <div className="form__actions flex flex-col text-center items-center gap-y-2">
-                    <span className="from__n-have text-sm text-blueGray">
-                      Еще нет аккаунта?
+                    <span className="from__have text-sm text-blueGray">
+                      Уже есть аккаунт?
                     </span>
                     <span className="from__link text-base text-mainBlue underline font-bold">
-                      Зарегистрироваться
+                      Войти
                     </span>
                   </div>
                 </form>

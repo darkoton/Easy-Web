@@ -1,12 +1,6 @@
 import laptop from '@/assets/img/auth/laptop.png';
-import telegram from '@/assets/img/auth/telegram.svg';
-import view from '@/assets/img/auth/view.svg';
-import noView from '@/assets/img/auth/no-view.svg';
-import { useState } from 'react';
 
 export default function LoginPage() {
-  const [viewPassword, setViewPassword] = useState(false);
-
   return (
     <div className="page min-h-full flex items-center relative">
       <section className="login lg:mt-40 pb-[66px] lg:pb-[120px] w-full">
@@ -24,77 +18,34 @@ export default function LoginPage() {
               <div className="login__right flex justify-center w-full max-w-[360px] ">
                 <form
                   action="#"
-                  className="login__form w-full form flex flex-col items-center p-6 lg:p-8 bg-cardGray rounded-[32px] gap-y-3 lg:gap-y-4"
+                  className="login__form  w-full form flex flex-col items-center p-6 lg:p-8 bg-cardGray rounded-[32px] gap-y-3 lg:gap-y-4"
                 >
                   <h2 className="form__title text-center font-bold text-2xl">
-                    Вход
+                    Подтвердите регистрацию
                   </h2>
 
+                  <p className="form__text text-center mb-3 md:mb-4 text-sm md:text-base text-blueGray">
+                    Мы отправили уведомление на почту / Telegram
+                  </p>
+
                   <div className="form__field  flex flex-col gap-y-3 w-full">
-                    <label htmlFor="email" className="form__field-name text-sm">
-                      Email
+                    <label htmlFor="code" className="form__field-name text-sm">
+                      Код подтверждения
                     </label>
                     <div className="form__field-input-body flex items-center gap-x-3 justify-between px-4 py-3 bg-white rounded-2xl">
                       <input
-                        type="email"
-                        id="email"
-                        placeholder="Введите email"
+                        type="text"
+                        id="code"
+                        placeholder="Введите код"
                         className="form__field-input w-full text-sm outline-none"
                       />
                     </div>
                   </div>
-
-                  <div className="form__field  flex flex-col gap-y-3 w-full">
-                    <label
-                      htmlFor="password"
-                      className="form__field-name text-sm"
-                    >
-                      Пароль
-                    </label>
-                    <div className="form__field-input-body flex items-center gap-x-3 justify-between px-4 py-3 bg-white rounded-2xl">
-                      <input
-                        type={viewPassword ? 'text' : 'password'}
-                        id="password"
-                        placeholder="Введите пароль"
-                        className="form__field-input w-full text-sm outline-none"
-                      />
-                      <img
-                        src={viewPassword ? view : noView}
-                        alt=""
-                        className="from__icon cursor-pointer"
-                        onClick={() => setViewPassword(!viewPassword)}
-                      />
-                    </div>
-                  </div>
-
-                  <a
-                    href="#"
-                    className="form__forgot cursor-pointer text-mainBlue mb-3 lg:mb-4 transition-colors hover:text-black"
-                  >
-                    Забыли пароль?
-                  </a>
 
                   <div className="form__buttons flex flex-col items-center gap-y-3 w-full">
                     <button className="form__button w-full font-bold border-2 border-mainBlue bg-mainBlue text-sm rounded-2xl py-3 text-white transition-all hover:bg-transparent hover:text-dark">
-                      Войти
+                      Подтвердить
                     </button>
-                    <button className="form__button-telegram flex items-center justify-between w-full font-bold pl-4 pr-2 border-2 border-mainBlue text-sm rounded-2xl py-2 text-dark transition-transform  hover:scale-[0.99]">
-                      Войти через Telegram
-                      <img
-                        src={telegram}
-                        alt="telegram"
-                        className="form__telegram"
-                      />
-                    </button>
-                  </div>
-
-                  <div className="form__actions flex flex-col text-center items-center gap-y-2">
-                    <span className="from__n-have text-sm text-blueGray">
-                      Еще нет аккаунта?
-                    </span>
-                    <span className="from__link text-base text-mainBlue underline font-bold">
-                      Зарегистрироваться
-                    </span>
                   </div>
                 </form>
               </div>
