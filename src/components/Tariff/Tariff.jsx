@@ -8,21 +8,25 @@ const tabs = [
   {
     value: '1',
     text: '1 мес.',
+    pcText: '1 месяц',
     discount: null,
   },
   {
     value: '3',
     text: '3 мес.',
+    pcText: '3 месяца',
     discount: '-10%',
   },
   {
     value: '6',
     text: '6 мес.',
+    pcText: '6 месяцев',
     discount: '-20%',
   },
   {
     value: '12',
     text: '12 мес.',
+    pcText: '12 месяцев',
     discount: '-30%',
   },
 ];
@@ -58,7 +62,9 @@ export default function TariffSection() {
       <div className="tariff__container _container">
         <div className="tariff__body rounded-[32px] flex flex-col items-center lg:bg-cardGray p-0 lg:px-8 lg:pb-8 lg:pt-7">
           <div className="tariff__top flex w-full items-center justify-between gap-y-8 gap-x-8 mb-6 flex-col lg:mb-5 lg:flex-row">
-            <h2 className="tariff__title text-[28px] lg:text-[40px]">Тарифы</h2>
+            <h2 className="tariff__title text-[28px] lg:text-[40px] font-bold">
+              Тарифы
+            </h2>
             <div className="tariff__tabs lg:gap-x-2 flex justify-between  p-2 rounded-2xl bg-cardGray text-sm lg:p-1 lg:rounded-xl lg:text-base lg:bg-white w-full lg:w-auto">
               {tabs.map(tab => (
                 <button
@@ -69,7 +75,9 @@ export default function TariffSection() {
                   ].join(' ')}
                   onClick={selectTime(tab.value)}
                 >
-                  {tab.text}
+                  <span className="lg:hidden">{tab.text}</span>
+                  <span className="hidden lg:block">{tab.pcText}</span>
+
                   {tab.discount && (
                     <span className="text-mainBlue">{tab.discount}</span>
                   )}
@@ -79,7 +87,7 @@ export default function TariffSection() {
           </div>
 
           <div className="tariff__main w-full flex items-center mb-8 gap-x-[15px]">
-            <div className="tariff__notes whitespace-nowrap flex-col text-blueGray items-start gap-y-4 text-base hidden lg:flex leading-[1.4] mt-4">
+            <div className="tariff__notes whitespace-nowrap flex-col text-blueGray items-start gap-y-4 text-base hidden lg:flex leading-[1.4] mt-2">
               <span className="tariff__note">Сайтов</span>
               <span className="tariff__note">Шаблоны лендингов</span>
               <span className="tariff__note">Логирование лидов</span>

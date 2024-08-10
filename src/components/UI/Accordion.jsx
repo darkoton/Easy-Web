@@ -9,7 +9,7 @@ Accordion.propTypes = {
 
 export default function Accordion({ active, onClick, title, text }) {
   return (
-    <div className="rounded-[24px]bg-cardGray">
+    <div className="rounded-[24px] bg-cardGray">
       <h3>
         <button
           className="group flex gap-x-3 w-full justify-between items-center px-5 py-3 md:px-8 md:py-4 text-left text-lg md:text-2xl font-bold"
