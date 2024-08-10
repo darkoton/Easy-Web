@@ -1,5 +1,5 @@
-import laptop from '@/assets/img/main/laptop.png';
-import head from '@/assets/img/main/head.png';
+import laptop from '@/assets/img/main/laptop.webp';
+import head from '@/assets/img/main/head.webp';
 
 export default function MainSection() {
   return (

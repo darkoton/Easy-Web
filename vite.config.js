@@ -7,6 +7,7 @@ const __dirname = path.resolve();
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // base: '/',
   base: '/Easy-Web/',
   plugins: [
     react(),

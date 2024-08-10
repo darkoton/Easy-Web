@@ -1,6 +1,6 @@
-import logo from '@/assets/img/footer/logo.png';
-import telegram from '@/assets/img/footer/telegram.png';
-import email from '@/assets/img/footer/email.png';
+import logo from '@/assets/img/footer/logo.webp';
+import telegram from '@/assets/img/footer/telegram.webp';
+import email from '@/assets/img/footer/email.webp';
 
 export default function Footer() {
   return (

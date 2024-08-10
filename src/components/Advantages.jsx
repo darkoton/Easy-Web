@@ -1,7 +1,7 @@
-import domain from '@/assets/img/advantages/domain.png';
-import team from '@/assets/img/advantages/team.png';
-import tests from '@/assets/img/advantages/tests.png';
-import view from '@/assets/img/advantages/view.png';
+import domain from '@/assets/img/advantages/domain.webp';
+import team from '@/assets/img/advantages/team.webp';
+import tests from '@/assets/img/advantages/tests.webp';
+import view from '@/assets/img/advantages/view.webp';
 import propTypes from 'prop-types';
 
 const cards = [

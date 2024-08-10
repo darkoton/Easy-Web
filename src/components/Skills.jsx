@@ -1,9 +1,9 @@
 import Slider from '@/components/UI/Slider';
-import constructor from '@/assets/img/skills/constructor.png';
-import template from '@/assets/img/skills/template.png';
-import integrate from '@/assets/img/skills/integrate.png';
-import hosting from '@/assets/img/skills/hosting.png';
-import counter from '@/assets/img/skills/counter.png';
+import constructor from '@/assets/img/skills/constructor.webp';
+import template from '@/assets/img/skills/template.webp';
+import integrate from '@/assets/img/skills/integrate.webp';
+import hosting from '@/assets/img/skills/hosting.webp';
+import counter from '@/assets/img/skills/counter.webp';
 import propTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
 

@@ -1,7 +1,7 @@
-import laptop from '@/assets/img/auth/laptop.png';
-import telegram from '@/assets/img/auth/telegram.svg';
-import view from '@/assets/img/auth/view.svg';
-import noView from '@/assets/img/auth/no-view.svg';
+import laptop from '@/assets/img/auth/laptop.webp';
+import telegram from '@/assets/img/auth/telegram.webp';
+import view from '@/assets/img/auth/view.webp';
+import noView from '@/assets/img/auth/no-view.webp';
 import { useState } from 'react';
 
 export default function LoginPage() {

@@ -1,7 +1,7 @@
-import landing from '@/assets/img/benefit/landing.png';
-import hosting from '@/assets/img/benefit/hosting.png';
-import test from '@/assets/img/benefit/test.png';
-import head from '@/assets/img/benefit/head.png';
+import landing from '@/assets/img/benefit/landing.webp';
+import hosting from '@/assets/img/benefit/hosting.webp';
+import test from '@/assets/img/benefit/test.webp';
+import head from '@/assets/img/benefit/head.webp';
 
 export default function BenefitSection() {
   return (

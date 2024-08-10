@@ -1,5 +1,5 @@
-import people from '@/assets/img/referrals/people.png';
-import emoji from '@/assets/img/referrals/emoji.png';
+import people from '@/assets/img/referrals/people.webp';
+import emoji from '@/assets/img/referrals/emoji.webp';
 
 export default function ReferralsSection() {
   return (
