@@ -116,7 +116,7 @@ export default function Slider({
     };
 
     setMaxOffset(
-      Number(slidesPerView) > 1
+      Number(slidesPerView) >= 2
         ? -(
             slideWidth * (slides.length - 1) -
             slideWidth * 2 +
@@ -129,7 +129,9 @@ export default function Slider({
           ),
     );
 
-    setMaxActive(Number(slidesPerView) > 1 ? slides.length - 2 : slides.length);
+    setMaxActive(
+      Number(slidesPerView) >= 2 ? slides.length - 2 : slides.length,
+    );
 
     disableNavigation(1);
 

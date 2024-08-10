@@ -103,6 +103,8 @@ export default function TariffSection() {
                 pagination={true}
                 className="tariff__plans w-full"
                 adaptiv=""
+                slidesPerView={1.1}
+                spaceBetween={2}
               >
                 {tariffs.map(tariff => (
                   <div
