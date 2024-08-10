@@ -60,7 +60,7 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section className="skills mt-[70px] md:mt-[160px]">
+    <section className="skills mt-[120px] md:mt-[160px]">
       <div className="skills__container _container">
         <div className="skills__body flex flex-col">
           <div className="skills__top flex items-center px-3 justify-center mb-8 md:px-8 md:justify-between md:mb-12">

@@ -28,7 +28,7 @@ export default function MainSection() {
               Зарабатывайте больше, создавайте за минуты
             </p>
 
-            <Button className="main__button">Начать бесплатно</Button>
+            <Button className="main__button !px-6">Начать бесплатно</Button>
 
             <div className="main__head-body absolute -z-10 flex justify-end -right-5 -bottom-4 md:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
               <img
