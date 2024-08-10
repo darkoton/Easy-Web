@@ -242,7 +242,7 @@ export default function Slider({
       >
         <div
           className={[
-            'slider-wrapper  h-full flex transition-transform duration-[600ms] ease select-none cursor-grab',
+            'slider-wrapper h-full flex transition-transform duration-[600ms] ease select-none cursor-grab',
             classWrapper,
           ].join(' ')}
           style={{

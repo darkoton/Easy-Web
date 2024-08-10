@@ -101,8 +101,8 @@ export default function TariffSection() {
             {swipeable ? (
               <Slider
                 pagination={true}
-                className="tariff__plans w-full"
-                classWindow="overflow-visible"
+                className="tariff__plans w-full md:hidden"
+                classWindow="overflow-visible md:overflow-hidden"
                 slidesPerView={1.15}
                 spaceBetween={3}
               >
