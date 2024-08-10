@@ -65,7 +65,7 @@ export default function Slider({
   const swipeRight = useCallback(
     reset => {
       setOffset(currentOffset => {
-        const newOffset = currentOffset - slideWidth;
+        const newOffset = currentOffset - slideWidth - spaceBetween;
         if (currentOffset <= maxOffset && reset) {
           setActive(1);
           disableNavigation(1);
@@ -78,21 +78,21 @@ export default function Slider({
         return Math.max(newOffset, maxOffset);
       });
     },
-    [maxOffset, slideWidth, active, disableNavigation],
+    [maxOffset, slideWidth, active, disableNavigation, spaceBetween],
   );
 
   const swipeLeft = useCallback(() => {
     setOffset(currentOffset => {
-      const newOffset = currentOffset + slideWidth;
+      const newOffset = currentOffset + slideWidth + spaceBetween;
 
-      if (0 >= newOffset) {
+      if (active != 1) {
         setActive(active - 1);
       }
 
       disableNavigation(active - 1);
       return Math.min(newOffset, 0);
     });
-  }, [slideWidth, active, disableNavigation]);
+  }, [slideWidth, active, disableNavigation, spaceBetween]);
 
   const handleLeftArrowClickAndSwipe = useCallback(() => {
     if (autoplayInterval.current) {
@@ -117,8 +117,16 @@ export default function Slider({
 
     setMaxOffset(
       Number(slidesPerView) > 1
-        ? -(slideWidth * (slides.length - 1) - slideWidth * 2)
-        : -(slideWidth * (slides.length - 1)),
+        ? -(
+            slideWidth * (slides.length - 1) -
+            slideWidth * 2 +
+            (slides.length - 1) * spaceBetween -
+            spaceBetween * 2
+          )
+        : -(
+            slideWidth * (slides.length - 1) +
+            (slides.length - 1) * spaceBetween
+          ),
     );
 
     setMaxActive(Number(slidesPerView) > 1 ? slides.length - 2 : slides.length);
@@ -141,7 +149,14 @@ export default function Slider({
         });
       }),
     );
-  }, [children, slidesPerView, slideWidth, slides.length, disableNavigation]);
+  }, [
+    children,
+    slidesPerView,
+    slideWidth,
+    slides.length,
+    disableNavigation,
+    spaceBetween,
+  ]);
 
   useEffect(() => {
     if (navigation) {
@@ -213,18 +228,19 @@ export default function Slider({
 
   return (
     <div className="slider w-full h-auto flex items-center" {...props}>
+      {/* {active}/{maxActive} */}
       <div
         className="slider-window w-full h-full overflow-hidden"
         ref={windowRef}
       >
         <div
           className={[
-            'slider-wrapper  h-full flex transition-transform duration-300 ease-in-out select-none cursor-grab',
+            'slider-wrapper  h-full flex transition-transform duration-[600ms] ease select-none cursor-grab',
             adaptiv,
           ].join(' ')}
           style={{
             transform: `translateX(${offset}%)`,
-            columnGap: `${spaceBetween}px`,
+            columnGap: `${spaceBetween}%`,
           }}
         >
           {slides}

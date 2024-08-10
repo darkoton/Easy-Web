@@ -116,7 +116,7 @@ export default function SkillsSection() {
             reset={!sliderAuto}
             slidesPerView={3.5}
             swipeable={false}
-            spaceBetween={20}
+            spaceBetween={2}
           >
             {cards.map(card => (
               <Skill key={card.title} {...card} />
