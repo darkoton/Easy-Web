@@ -24,15 +24,3 @@
     font-style: normal;
   }
 }
-
-@layer scroll {
-  body::-webkit-scrollbar {
-    @apply w-1;
-  }
-  body::-webkit-scrollbar-thumb {
-    @apply bg-blue-600 rounded-xl;
-  }
-  body::-webkit-scrollbar-track {
-    @apply bg-blue-200;
-  }
-}

@@ -27,6 +27,18 @@ export default {
   plugins: [
     plugin(function ({ addUtilities, addComponents }) {
       addUtilities({
+        body: {
+          '&::-webkit-scrollbar': {
+            width: '4px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            borderRadius: '12px',
+            backgroundColor: '#2563eb',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#bfdbfes',
+          },
+        },
         '._container': {
           width: '100%',
           maxWidth: '1136px',
