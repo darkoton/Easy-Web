@@ -6,7 +6,7 @@ export default function MainSection() {
     <main className="main mt-10">
       <div className="main__container _container">
         <div className="main__body flex justify-center gap-x-3 gap-y-9 items-center flex-col-reverse md:flex-row">
-          <div className="main__left relative flex justify-center w-full md:w-6.5/12 before:absolute before:blur-[324px] before:left-0 before:bottom-0 before:content-[''] before:w-72 before:h-72 before:rounded-full before:bg-blue-600 before:-z-10">
+          <div className="main__left relative flex justify-center w-full md:w-6.5/12 before:absolute before:blur-[140px] before:-left-1/2 before:translate-x-1/2 before:bottom-0 before:content-[''] before:w-72 before:h-72 before:rounded-full before:bg-[#99B8FF] before:-z-10">
             <img
               src={laptop}
               alt=""
@@ -21,11 +21,9 @@ export default function MainSection() {
               Зарабатывайте больше, создавайте за минуты
             </p>
 
-            <button className="main__button font-bold text-base transition-all bg-mainBlue text-white rounded-2xl border-2 border-mainBlue py-2 px-5 sm:py-3 sm:px-6 cursor-pointer hover:bg-transparent hover:text-black hover:shadow-inner hover:shadow-blue-300 active:translate-y-0.5">
-              Начать бесплатно
-            </button>
+            <button className="main__button btn">Начать бесплатно</button>
 
-            <div className="main__head-body absolute z-10 flex justify-end right-0 -bottom-4 lg:-bottom-20 after:absolute after:blur-[264px] after:-right-40 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:bg-mainBlue after:-z-10">
+            <div className="main__head-body absolute z-10 flex justify-end right-0 -bottom-4 lg:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
               <img src={head} alt="" className="main__head w-3/4 lg:w-full" />
             </div>
           </div>

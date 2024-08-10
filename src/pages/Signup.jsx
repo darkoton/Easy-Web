@@ -1,7 +1,7 @@
-import laptop from '@/assets/img/auth/laptop.png';
-import telegram from '@/assets/img/auth/telegram.svg';
-import view from '@/assets/img/auth/view.svg';
-import noView from '@/assets/img/auth/no-view.svg';
+import laptop from '@/assets/img/auth/laptop.webp';
+import telegram from '@/assets/img/auth/telegram.webp';
+import view from '@/assets/img/auth/view.webp';
+import noView from '@/assets/img/auth/no-view.webp';
 import { useState } from 'react';
 
 export default function LoginPage() {
@@ -108,10 +108,10 @@ export default function LoginPage() {
                   </div>
 
                   <div className="form__buttons flex flex-col items-center gap-y-3 w-full">
-                    <button className="form__button w-full font-bold border-2 border-mainBlue bg-mainBlue text-sm rounded-2xl py-3 text-white transition-all hover:bg-transparent hover:text-dark">
+                    <button className="form__button btn w-full text-sm rounded-2xl py-3">
                       Зарегистрироваться
                     </button>
-                    <button className="form__button-telegram flex items-center justify-between w-full font-bold pl-4 pr-2 border-2 border-mainBlue text-sm rounded-2xl py-2 text-dark transition-transform  hover:scale-[0.99]">
+                    <button className="form__button-telegram flex items-center justify-between w-full font-bold pl-4 pr-2 border-2 border-mainBlue text-sm rounded-2xl py-2 text-dark transition-transform  hover:scale-[1.02]">
                       Войти через Telegram
                       <img
                         src={telegram}
@@ -133,7 +133,7 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <div className="auth__support absolute right-3 cursor-pointer md:right-5 bottom-3 md:bottom-5 rounded-full p-[10px] md:p-[15px] bg-mainBlue border-2 border-mainBlue text-white transition-colors hover:bg-transparent hover:text-mainBlue">
+            <div className="auth__support absolute right-3 cursor-pointer md:right-5 bottom-3 md:bottom-5 rounded-full p-[10px] md:p-[15px] bg-mainBlue border-2 border-mainBlue text-white transition-transform hover:scale-[1.05]">
               <svg
                 width="26"
                 height="26"

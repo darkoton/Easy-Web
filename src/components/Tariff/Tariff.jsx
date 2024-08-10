@@ -189,9 +189,7 @@ export default function TariffSection() {
             )}
           </div>
 
-          <div className="tariff__button font-bold cursor-pointer text-base transition-all bg-mainBlue text-white rounded-2xl border-2 border-mainBlue py-2 px-5 sm:py-3 sm:px-6 hover:bg-transparent hover:text-black hover:shadow-inner hover:shadow-blue-300">
-            Попробовать бесплатно
-          </div>
+          <div className="tariff__button btn">Попробовать бесплатно</div>
         </div>
       </div>
     </section>

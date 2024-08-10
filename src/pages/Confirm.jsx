@@ -1,4 +1,4 @@
-import laptop from '@/assets/img/auth/laptop.png';
+import laptop from '@/assets/img/auth/laptop.webp';
 
 export default function LoginPage() {
   return (
@@ -18,7 +18,7 @@ export default function LoginPage() {
               <div className="login__right flex justify-center w-full max-w-[360px] ">
                 <form
                   action="#"
-                  className="login__form  w-full form flex flex-col items-center p-6 lg:p-8 bg-cardGray rounded-[32px] gap-y-3 lg:gap-y-4"
+                  className="login__form w-full form flex flex-col items-center p-6 lg:p-8 bg-cardGray rounded-[32px] gap-y-3 lg:gap-y-4"
                 >
                   <h2 className="form__title text-center font-bold text-2xl">
                     Подтвердите регистрацию
@@ -28,7 +28,7 @@ export default function LoginPage() {
                     Мы отправили уведомление на почту / Telegram
                   </p>
 
-                  <div className="form__field  flex flex-col gap-y-3 w-full">
+                  <div className="form__field flex flex-col gap-y-3 w-full">
                     <label htmlFor="code" className="form__field-name text-sm">
                       Код подтверждения
                     </label>
@@ -43,7 +43,7 @@ export default function LoginPage() {
                   </div>
 
                   <div className="form__buttons flex flex-col items-center gap-y-3 w-full">
-                    <button className="form__button w-full font-bold border-2 border-mainBlue bg-mainBlue text-sm rounded-2xl py-3 text-white transition-all hover:bg-transparent hover:text-dark">
+                    <button className="form__button btn w-full text-sm rounded-2xl py-3">
                       Подтвердить
                     </button>
                   </div>

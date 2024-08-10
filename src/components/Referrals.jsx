@@ -6,7 +6,7 @@ export default function ReferralsSection() {
     <section className="referrals mt-20 lg:mt-32">
       <div className="referrals__container _container">
         <div className="referrals__body flex items-center justify-center gap-x-16 gap-y-8 flex-col md:flex-row">
-          <div className="referrals__left flex justify-center relative w-full lg:w-1/2 before:content-[''] before:bg-mainBlue before:w-48 before:h-48 before:rounded-full before:absolute before:-bottom-10 before:left-1/2 before:-translate-x-1/2 before:-z-10 before:blur-[264px]">
+          <div className="referrals__left flex justify-center relative w-full lg:w-1/2 before:absolute before:blur-[140px] before:-left-1/2 before:translate-x-1/2 before:bottom-0 before:content-[''] before:w-72 before:h-72 before:rounded-full before:bg-[#99B8FF] before:-z-10">
             <img
               src={people}
               alt="young people standing and talking."

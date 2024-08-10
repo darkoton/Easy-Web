@@ -75,10 +75,10 @@ export default function LoginPage() {
                   </a>
 
                   <div className="form__buttons flex flex-col items-center gap-y-3 w-full">
-                    <button className="form__button w-full font-bold border-2 border-mainBlue bg-mainBlue text-sm rounded-2xl py-3 text-white transition-all hover:bg-transparent hover:text-dark">
+                    <button className="form__button btn w-full text-sm rounded-2xl py-3 text-white">
                       Войти
                     </button>
-                    <button className="form__button-telegram flex items-center justify-between w-full font-bold pl-4 pr-2 border-2 border-mainBlue text-sm rounded-2xl py-2 text-dark transition-transform  hover:scale-[0.99]">
+                    <button className="form__button-telegram flex items-center justify-between w-full font-bold pl-4 pr-2 border-2 border-mainBlue text-sm rounded-2xl py-2 text-dark transition-transform  hover:scale-[1.02]">
                       Войти через Telegram
                       <img
                         src={telegram}
