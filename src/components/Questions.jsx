@@ -45,7 +45,7 @@ const questions = [
 ];
 
 export default function QuestionsSection() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(null);
 
   function selectQuestion(id) {
     if (active == id) {
