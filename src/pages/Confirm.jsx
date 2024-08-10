@@ -12,7 +12,7 @@ export default function LoginPage() {
                 <img
                   src={laptop}
                   alt="laptop"
-                  className="login__laptop max-w-full"
+                  className="login__laptop w-full max-w-[692px] object-cover"
                 />
               </div>
 

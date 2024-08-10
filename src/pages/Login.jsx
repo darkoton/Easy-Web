@@ -1,7 +1,7 @@
 import laptop from '@/assets/img/auth/laptop.webp';
-import telegram from '@/assets/img/auth/telegram.webp';
-import view from '@/assets/img/auth/view.webp';
-import noView from '@/assets/img/auth/no-view.webp';
+import telegram from '@/assets/img/auth/telegram.svg';
+import view from '@/assets/img/auth/view.svg';
+import noView from '@/assets/img/auth/no-view.svg';
 import { useState } from 'react';
 import Button from '@/components/UI/Button';
 
@@ -18,7 +18,7 @@ export default function LoginPage() {
                 <img
                   src={laptop}
                   alt="laptop"
-                  className="login__laptop max-w-full"
+                  className="login__laptop w-full max-w-[692px]"
                 />
               </div>
 

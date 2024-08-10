@@ -1,4 +1,5 @@
 import laptop from '@/assets/img/main/laptop.webp';
+import laptopMob from '@/assets/img/main/laptop-mob.webp';
 import head from '@/assets/img/main/head.webp';
 import Button from '@/components/UI/Button';
 
@@ -11,7 +12,12 @@ export default function MainSection() {
             <img
               src={laptop}
               alt=""
-              className="main__laptop w-full sm:w-8/12 md:w-full"
+              className="main__laptop w-full hidden sm:block sm:w-8/12 md:w-full"
+            />
+            <img
+              src={laptopMob}
+              alt=""
+              className="main__laptop w-full block sm:hidden"
             />
           </div>
           <div className="main__right flex-auto flex flex-col justify-center items-start relative w-full md:w-5/12">
