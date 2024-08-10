@@ -12,7 +12,7 @@ export default function Accordion({ active, onClick, title, text }) {
     <div className="rounded-[24px] bg-cardGray">
       <h3>
         <button
-          className="group flex gap-x-3 w-full justify-between items-center px-5 py-3 md:px-8 md:py-4 text-left text-lg md:text-2xl font-bold"
+          className="group flex gap-x-3 w-full justify-between items-center px-5 py-3 md:px-8 md:py-4 leading-[21px] md:leading-[28px] text-left text-lg md:text-2xl font-bold"
           onClick={onClick}
         >
           {title}
@@ -38,7 +38,9 @@ export default function Accordion({ active, onClick, title, text }) {
         </button>
       </h3>
       <div className={[active ? 'visible' : 'hidden'].join(' ')}>
-        <p className="py-3 md:px-8 py-0">{text}</p>
+        <p className="text-sm md:text-base pb-[19px] px-5 md:pb-6 md:px-8 ">
+          {text}
+        </p>
       </div>
     </div>
   );

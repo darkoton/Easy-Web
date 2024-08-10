@@ -2,7 +2,7 @@ import domain from '@/assets/img/advantages/domain.webp';
 import team from '@/assets/img/advantages/team.webp';
 import tests from '@/assets/img/advantages/tests.webp';
 import view from '@/assets/img/advantages/view.webp';
-import propTypes from 'prop-types';
+import Card from '@/components/UI/Card';
 
 const cards = [
   {
@@ -10,26 +10,26 @@ const cards = [
     description:
       'Забудьте о регистраторах доменов, DNS и прочее. С нами все легко и просто',
     img: domain,
-    width: 'col-span-10 md:col-span-6 ',
+    className: 'col-span-10 md:col-span-6 ',
   },
   {
     title: 'Командный режим',
     description: 'Совместная работа с трафиком проще чем когда-либо',
     img: team,
-    width: 'col-span-10 md:col-span-4',
+    className: 'col-span-10 md:col-span-4',
   },
   {
     title: 'A/B тестирование',
     description: 'Оптимизируйте лендинги до максимального профита',
     img: tests,
-    width: 'col-span-10 md:col-span-4',
+    className: 'col-span-10 md:col-span-4',
   },
   {
     title: 'Удобный просмотр заказов',
     description:
       'Вся информация в одном месте, а Шейв / Потеря лидов становится невозможным',
     img: view,
-    width: 'col-span-10 md:col-span-6',
+    className: 'col-span-10 md:col-span-6',
   },
 ];
 
@@ -43,39 +43,12 @@ export default function AdvantagesSection() {
           </h2>
 
           <div className="advantages__grid grid gap-4 grid-cols-10 grid-flow-dense">
-            {cards.map(card => (
-              <Card key={card.title} {...card} />
+            {cards.map(c => (
+              <Card key={c.title} {...c} />
             ))}
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-Card.propTypes = {
-  img: propTypes.string,
-  title: propTypes.string,
-  description: propTypes.string,
-  width: propTypes.string,
-};
-
-function Card({ img, title, description, width }) {
-  return (
-    <div
-      className={[
-        'advantages__card flex flex-col items-start bg-[#F6F7FB] rounded-[24px] p-6 md:rounded-[32px] md:p-8',
-        width,
-      ].join(' ')}
-    >
-      <img src={img} alt="" className="advantages__card-img max-w-full mb-4" />
-
-      <h4 className="advantages__card-title font-bold mb-3 text-lg md:mb-4 md:text-2xl">
-        {title}
-      </h4>
-      <p className="advantages__card-desctiption text-sm md:text-base">
-        {description}
-      </p>
-    </div>
   );
 }

@@ -15,10 +15,10 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="footer__contacts flex flex-wrap items-start md:items-center gap-3">
+            <div className="footer__contacts flex flex-wrap flex-col md:flex-row items-start md:items-center gap-3">
               <a
                 href="#"
-                className="footer__contact flex items-center gap-x-2 text-sm p-1 pl-2 rounded-[24px] bg-white md:text-base"
+                className="footer__contact flex items-center gap-x-2 text-sm p-1 pl-2 rounded-[24px] bg-white md:text-base transition-transform duration-300 hover:scale-[1.02]"
               >
                 <img
                   src={telegram}
@@ -33,7 +33,7 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="footer__contact flex items-center gap-x-2 text-sm p-1 pl-2 rounded-[24px] bg-white md:text-base"
+                className="footer__contact flex items-center gap-x-2 text-sm p-1 pl-2 rounded-[24px] bg-white md:text-base transition-transform duration-300 hover:scale-[1.02]"
               >
                 <img
                   src={telegram}
@@ -47,8 +47,8 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
-                className="footer__contact flex items-center gap-x-2 text-sm p-1 pl-2 rounded-[24px] bg-white md:text-base"
+                href="mailto:support@ls.app"
+                className="footer__contact flex items-center gap-x-2 text-sm p-1 pl-2 rounded-[24px] bg-white md:text-base transition-transform duration-300 hover:scale-[1.02]"
               >
                 <img
                   src={email}
@@ -65,7 +65,7 @@ export default function Footer() {
 
           <div className="footer__bottom text-blueGray text-sm flex justify-between flex-col-reverse lg:flex-row gap-y-8">
             <div className="footer__rights">© EasyWeb 2024</div>
-            <div className="footer__links flex gap-x-[72px] gap-y-4 flex-wrap">
+            <div className="footer__links flex gap-x-[72px] gap-y-4 flex-wrap flex-col md:flex-row">
               <a
                 href="#"
                 className="footer__link underline transition-colors hover:text-mainBlue"

@@ -4,8 +4,8 @@ import template from '@/assets/img/skills/template.webp';
 import integrate from '@/assets/img/skills/integrate.webp';
 import hosting from '@/assets/img/skills/hosting.webp';
 import counter from '@/assets/img/skills/counter.webp';
-import propTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
+import Card from '@/components/UI/Card';
 
 const cards = [
   {
@@ -118,36 +118,12 @@ export default function SkillsSection() {
             swipeable={false}
             spaceBetween={2}
           >
-            {cards.map(card => (
-              <Skill key={card.title} {...card} />
+            {cards.map(c => (
+              <Card key={c.title} className="!max-w-full md:!max-w-80" {...c} />
             ))}
           </Slider>
         </div>
       </div>
     </section>
-  );
-}
-
-Skill.propTypes = {
-  title: propTypes.string,
-  description: propTypes.string,
-  img: propTypes.string,
-};
-function Skill({ title, description, img, ...props }) {
-  return (
-    <div
-      className="skills__card flex flex-col items-start bg-cardGray w-full h-full p-8 rounded-[32px] !max-w-full sm:!max-w-80"
-      {...props}
-    >
-      <div className="skills__card-top flex  gap-y-4 flex-row items-center gap-x-4 mb-3 md:flex-col md:items-start md:mb-4">
-        <img src={img} alt="logo" className="skills__card-img max-w-full" />
-        <h3 className="skills__card-title font-bold text-lg leading-5 md:text-2xl md:leading-6">
-          {title}
-        </h3>
-      </div>
-      <p className="skills__card-description text-sm leading-4 md:text-base">
-        {description}
-      </p>
-    </div>
   );
 }

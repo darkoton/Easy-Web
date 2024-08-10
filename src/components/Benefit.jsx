@@ -2,6 +2,24 @@ import landing from '@/assets/img/benefit/landing.webp';
 import hosting from '@/assets/img/benefit/hosting.webp';
 import test from '@/assets/img/benefit/test.webp';
 import head from '@/assets/img/benefit/head.webp';
+import Card from '@/components/UI/Card';
+
+const cards = [
+  {
+    description:
+      'Создавайте продающие лендинги в пару кликов без дизайнеров и верстальщиков',
+    img: landing,
+  },
+  {
+    description: 'Экономьте до 20$ ежемесячно с нашим бесплатным хостингом',
+    img: hosting,
+  },
+  {
+    description:
+      'A/B тестирование точно покажет, какие цены и дизайны максимизируют вашу прибыль',
+    img: test,
+  },
+];
 
 export default function BenefitSection() {
   return (
@@ -18,28 +36,14 @@ export default function BenefitSection() {
           </h2>
 
           <div className="benefit__cards flex justify-center gap-4 flex-wrap flex-col md:flex-row">
-            <div className="benefit__card rounded-3xl w-full gap-y-4 bg-cardGray flex flex-col items-start p-6 max-w-full md:px-9 md:max-w-[350px]">
-              <img src={landing} alt="" className="benefit__card-img" />
-              <p className="benefit__card-description font-bold text-lg md:text-xl">
-                Создавайте продающие лендинги в пару кликов без дизайнеров и
-                верстальщиков
-              </p>
-            </div>
-
-            <div className="benefit__card rounded-3xl w-full gap-y-4 bg-cardGray flex flex-col items-start p-6 max-w-full md:px-9 md:max-w-[350px]">
-              <img src={hosting} alt="" className="benefit__card-img" />
-              <p className="benefit__card-description font-bold text-lg md:text-xl">
-                Экономьте до 20$ ежемесячно с нашим бесплатным хостингом
-              </p>
-            </div>
-
-            <div className="benefit__card rounded-3xl w-full gap-y-4 bg-cardGray flex flex-col items-start p-6 max-w-full md:px-9 md:max-w-[350px]">
-              <img src={test} alt="" className="benefit__card-img" />
-              <p className="benefit__card-description font-bold text-lg md:text-xl">
-                A/B тестирование точно покажет, какие цены и дизайны
-                максимизируют вашу прибыль
-              </p>
-            </div>
+            {cards.map(c => (
+              <Card
+                key={c.description}
+                {...c}
+                textClassName="font-bold !text-lg !leading-[21px] md:!text-xl md:!leading-[24px]"
+                className="max-w-full md:max-w-[350px]"
+              />
+            ))}
           </div>
         </div>
       </div>
