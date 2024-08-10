@@ -35,7 +35,7 @@ const cards = [
 
 export default function AdvantagesSection() {
   return (
-    <section className="advantages mt-16 md:mt-32">
+    <section className="advantages mt-[120px]">
       <div className="advantages__container w-full max-w-[944px] mx-auto px-4">
         <div className="advantages__body">
           <h2 className="advantages__title title-section text-center mb-8 md:mb-12">

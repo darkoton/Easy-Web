@@ -56,7 +56,7 @@ export default function QuestionsSection() {
   }
 
   return (
-    <section className="questions mt-[120px] md:mt-40 mb-[120px] md:mb-[160px]">
+    <section className="questions mt-[120px] md:mt-[160px] mb-[120px] md:mb-[160px]">
       <div className="questions__container _container">
         <div className="questions__body">
           <h2 className="questions__title title-section md:ml-8 mb-8 md:mb-12 text-center md:text-left">

@@ -3,7 +3,7 @@ import emoji from '@/assets/img/referrals/emoji.webp';
 
 export default function ReferralsSection() {
   return (
-    <section className="referrals mt-20 lg:mt-32">
+    <section className="referrals mt-[120px]">
       <div className="referrals__container _container">
         <div className="referrals__body flex items-center justify-center gap-x-16 gap-y-8 flex-col md:flex-row">
           <div className="referrals__left flex justify-center relative w-full md:w-1/2 before:absolute before:blur-[140px] before:-left-1/2 before:translate-x-1/2 before:bottom-0 before:content-[''] before:w-72 before:h-72 before:rounded-full before:bg-[#99B8FF] before:-z-10">

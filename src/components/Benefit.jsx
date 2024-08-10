@@ -23,7 +23,7 @@ const cards = [
 
 export default function BenefitSection() {
   return (
-    <section className="benefit mt-[90px] md:mt-[140px]">
+    <section className="benefit mt-[120px] md:mt-[160px]">
       <div className="benefit__container _container">
         <div className="benefit__body flex flex-col items-center">
           <h2 className="benefit__title title-section relative text-center mb-8 max-w-[150px] md:mb-12 md:max-w-full">

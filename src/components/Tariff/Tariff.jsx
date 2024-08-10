@@ -60,7 +60,7 @@ export default function TariffSection() {
   }, []);
 
   return (
-    <section className="tariff mt-28 lg:mt-40">
+    <section className="tariff mt-[120px] md:mt-[160px]">
       <div className="tariff__container _container">
         <div className="tariff__body rounded-[32px] flex flex-col items-center lg:bg-cardGray p-0 lg:px-8 lg:pb-8 lg:pt-7">
           <div className="tariff__top flex w-full items-center justify-between gap-y-8 gap-x-8 mb-6 flex-col lg:mb-5 lg:flex-row">
