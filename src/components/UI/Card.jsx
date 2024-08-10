@@ -4,7 +4,7 @@ Card.propTypes = {
   title: propTypes.string,
   description: propTypes.string,
   img: propTypes.string,
-  wrap: propTypes.bool,
+  adaptWrap: propTypes.bool,
   className: propTypes.string,
   textClassName: propTypes.string,
 };
@@ -13,7 +13,7 @@ export default function Card({
   title = '',
   description = '',
   img = null,
-  wrap = true,
+  adaptWrap = true,
   className = '',
   textClassName = '',
   ...props
@@ -28,13 +28,19 @@ export default function Card({
     >
       <div
         className={[
-          'card-top flex gap-y-4 items-center gap-x-4 mb-3 md:items-start md:mb-4',
-          wrap ? 'flex-row md:flex-col' : 'flex-col',
+          'card-top flex gap-y-4 gap-x-4 mb-3  md:mb-4',
+          adaptWrap
+            ? 'flex-row md:flex-col items-center md:items-start'
+            : 'flex-row items-center',
         ].join(' ')}
       >
-        <img src={img} alt="logo" className="card-img max-w-full" />
+        <img src={img} alt="logo" className="card-img w-full max-w-[48px]" />
         {title && (
-          <h3 className="card-title font-bold text-lg leading-5 md:text-2xl md:leading-6">
+          <h3
+            className={[
+              'card-title font-bold text-lg leading-5 md:text-2xl md:leading-6',
+            ].join(' ')}
+          >
             {title}
           </h3>
         )}

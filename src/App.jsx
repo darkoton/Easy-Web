@@ -1,9 +1,9 @@
 import '@/style.css';
 import Footer from '@/components/Footer';
 import Home from '@/pages/Home';
-// import Login from '@/pages/Login';
-// import Signup from '@/pages/Signup';
-// import Confirm from '@/pages/Confirm';
+import Login from '@/pages/Login';
+import Signup from '@/pages/Signup';
+import Confirm from '@/pages/Confirm';
 
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
       {/* Header */}
       <main className="content flex-auto">
         <Home />
+        <Login />
+        <Signup />
+        <Confirm />
       </main>
       <Footer />
     </div>

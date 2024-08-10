@@ -1,9 +1,10 @@
 import laptop from '@/assets/img/auth/laptop.webp';
+import Button from '@/components/UI/Button';
 
 export default function LoginPage() {
   return (
-    <div className="page min-h-full flex items-center relative">
-      <section className="login lg:mt-40 pb-[66px] lg:pb-[120px] w-full">
+    <>
+      <section className="login lg:mt-40 pb-[66px] lg:pb-[120px] w-full relative">
         <div className="login__container _container">
           <div className="login__body flex flex-col">
             <div className="login__main flex items-center justify-center lg:justify-stretch gap-x-16">
@@ -43,9 +44,9 @@ export default function LoginPage() {
                   </div>
 
                   <div className="form__buttons flex flex-col items-center gap-y-3 w-full">
-                    <button className="form__button btn w-full text-sm rounded-2xl py-3">
+                    <Button className="form__button btn w-full text-sm rounded-2xl py-3">
                       Подтвердить
-                    </button>
+                    </Button>
                   </div>
                 </form>
               </div>
@@ -75,6 +76,6 @@ export default function LoginPage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

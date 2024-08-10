@@ -31,7 +31,7 @@ export default function BenefitSection() {
             <img
               src={head}
               alt=""
-              className="benefit__head absolute -right-24 -translate-y-1/2 top-0"
+              className="benefit__head w-full absolute max-w-[96px] -right-[96px] md:max-w-[128px] md:-right-[128px] top-5 -translate-y-1/2 md:top-0"
             />
           </h2>
 

@@ -1,11 +1,12 @@
 import laptop from '@/assets/img/main/laptop.webp';
 import head from '@/assets/img/main/head.webp';
+import Button from '@/components/UI/Button';
 
 export default function MainSection() {
   return (
     <main className="main mt-10">
       <div className="main__container _container">
-        <div className="main__body flex justify-center gap-x-3 gap-y-9 items-center flex-col-reverse md:flex-row">
+        <div className="main__body flex justify-center gap-x-2 gap-y-9 items-center flex-col-reverse md:flex-row">
           <div className="main__left relative flex justify-center w-full md:w-6.5/12 before:absolute before:blur-[140px] before:-left-1/2 before:translate-x-1/2 before:bottom-0 before:content-[''] before:w-72 before:h-72 before:rounded-full before:bg-[#99B8FF] before:-z-10">
             <img
               src={laptop}
@@ -21,10 +22,14 @@ export default function MainSection() {
               Зарабатывайте больше, создавайте за минуты
             </p>
 
-            <button className="main__button btn">Начать бесплатно</button>
+            <Button className="main__button">Начать бесплатно</Button>
 
-            <div className="main__head-body absolute -z-10 flex justify-end right-0 -bottom-4 lg:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
-              <img src={head} alt="" className="main__head w-3/4 lg:w-full" />
+            <div className="main__head-body absolute -z-10 flex justify-end right-0 -bottom-4 md:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
+              <img
+                src={head}
+                alt=""
+                className="main__head w-full max-w-[150px] md:max-w-[180px]"
+              />
             </div>
           </div>
         </div>

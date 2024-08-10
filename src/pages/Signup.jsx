@@ -3,14 +3,15 @@ import telegram from '@/assets/img/auth/telegram.webp';
 import view from '@/assets/img/auth/view.webp';
 import noView from '@/assets/img/auth/no-view.webp';
 import { useState } from 'react';
+import Button from '@/components/UI/Button';
 
 export default function LoginPage() {
   const [viewPassword, setViewPassword] = useState(true);
   const [viewConfirmPassword, setViewConfirmPassword] = useState(false);
 
   return (
-    <div className="page min-h-full flex items-center relative">
-      <section className="login lg:mt-40 pb-[66px] lg:pb-[120px] w-full">
+    <>
+      <section className="login lg:mt-40 pb-[66px] lg:pb-[120px] w-full relative">
         <div className="login__container _container">
           <div className="login__body flex flex-col">
             <div className="login__main flex items-center justify-center lg:justify-stretch gap-x-16">
@@ -108,9 +109,9 @@ export default function LoginPage() {
                   </div>
 
                   <div className="form__buttons flex flex-col items-center gap-y-3 w-full">
-                    <button className="form__button btn w-full text-sm rounded-2xl py-3">
+                    <Button className="form__button btn w-full text-sm rounded-2xl py-3">
                       Зарегистрироваться
-                    </button>
+                    </Button>
                     <button className="form__button-telegram flex items-center justify-between w-full font-bold pl-4 pr-2 border-2 border-mainBlue text-sm rounded-2xl py-2 text-dark transition-transform  hover:scale-[1.02]">
                       Войти через Telegram
                       <img
@@ -157,6 +158,6 @@ export default function LoginPage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

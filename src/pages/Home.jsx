@@ -8,7 +8,7 @@ import QuestionsSection from '@/components/Questions';
 
 export default function HomePage() {
   return (
-    <div className="page">
+    <>
       <MainSection />
       <SkillsSection />
       <ReferralsSection />
@@ -16,6 +16,6 @@ export default function HomePage() {
       <TariffSection />
       <BenefitSection />
       <QuestionsSection />
-    </div>
+    </>
   );
 }

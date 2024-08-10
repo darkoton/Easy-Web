@@ -45,7 +45,7 @@ export default function SkillsSection() {
   useEffect(() => {
     function checkWindow() {
       setTimeout(() => {
-        if (window.outerWidth <= 768) {
+        if (window.outerWidth <= 1280) {
           setSliderAuto(false);
         } else {
           setSliderAuto(true);
@@ -68,9 +68,9 @@ export default function SkillsSection() {
               Что умеет Easy<span className="text-mainBlue">Web</span>?
             </h2>
 
-            <div className="skills__navigation items-center gap-x-2 hidden md:flex">
+            <div className="skills__navigation items-center gap-x-2 hidden lg:flex">
               <button
-                className="skills__button group flex items-center justify-center w-10 h-10 rounded-xl bg-mainBlue disabled:bg-[#F6F7FB]"
+                className="skills__button group flex items-center justify-center w-10 h-10 rounded-xl transition-colors duration-100 bg-mainBlue disabled:bg-[#F6F7FB]"
                 ref={prevRef}
               >
                 <svg
@@ -88,7 +88,7 @@ export default function SkillsSection() {
               </button>
 
               <button
-                className="skills__button group flex items-center justify-center w-10 h-10 rounded-xl bg-mainBlue disabled:bg-[#F6F7FB]"
+                className="skills__button group flex items-center justify-center w-10 h-10 rounded-xl transition-colors duration-100 bg-mainBlue disabled:bg-[#F6F7FB]"
                 ref={nextRef}
               >
                 <svg
@@ -111,7 +111,7 @@ export default function SkillsSection() {
             navigation={{ prev: prevRef, next: nextRef }}
             className="skills__slider relative after:hidden after:content-[''] after:absolute after:-right-2 after:top-0 after:h-full after:w-44 after:bg-gradient-to-r after:from-transparent after:to-white md:after:block"
             units={'px'}
-            classWrapper="gap-y-4 flex-wrap justify-center md:flex-nowrap md:justify-stretch"
+            classWrapper="gap-y-4 flex-wrap justify-center lg:flex-nowrap lg:justify-stretch"
             autoPlay={sliderAuto}
             reset={!sliderAuto}
             slidesPerView={3.5}
@@ -119,7 +119,12 @@ export default function SkillsSection() {
             spaceBetween={2}
           >
             {cards.map(c => (
-              <Card key={c.title} className="!max-w-full md:!max-w-80" {...c} />
+              <Card
+                adaptWrap={false}
+                key={c.title}
+                className="!max-w-full md:!max-w-80"
+                {...c}
+              />
             ))}
           </Slider>
         </div>

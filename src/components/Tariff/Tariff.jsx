@@ -1,7 +1,9 @@
 import yes from '@/assets/img/tariff/yes.svg';
 import no from '@/assets/img/tariff/no.svg';
 import tariffs from './tariff.js';
-import Slider from '@/components/UI/Slider.jsx';
+import Slider from '@/components/UI/Slider';
+import Button from '@/components/UI/Button';
+
 import { useState, useEffect } from 'react';
 
 const tabs = [
@@ -197,7 +199,7 @@ export default function TariffSection() {
             )}
           </div>
 
-          <div className="tariff__button btn">Попробовать бесплатно</div>
+          <Button className="tariff__button">Попробовать бесплатно</Button>
         </div>
       </div>
     </section>

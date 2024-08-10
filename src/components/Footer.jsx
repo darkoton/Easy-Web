@@ -1,6 +1,6 @@
 import logo from '@/assets/img/footer/logo.webp';
-import telegram from '@/assets/img/footer/telegram.webp';
-import email from '@/assets/img/footer/email.webp';
+import telegram from '@/assets/img/footer/telegram.svg';
+import email from '@/assets/img/footer/email.svg';
 
 export default function Footer() {
   return (
@@ -9,10 +9,14 @@ export default function Footer() {
         <div className="footer__body pt-8 pb-8 lg:pb-[26px] gap-y-8 flex flex-col">
           <div className="footer__top flex flex-col lg:flex-row items-start lg:items-center lg:justify-between gap-y-8">
             <div className="footer__logo flex items-center gap-x-3">
-              <img src={logo} alt="" className="footer__logo-img max-w-full" />
-              <div className="footer__beta font-bold rounded-3xl bg-mainBlue px-2 py-1 text-xs text-white md:bg-white md:px-[10px] md:text-dark">
+              <img
+                src={logo}
+                alt=""
+                className="footer__logo-img w-full max-w-[125px] md:max-w-[142px] "
+              />
+              <span className="footer__beta font-bold rounded-3xl bg-mainBlue px-2 py-1 text-xs text-white md:text-sm md:bg-white md:px-[10px] md:text-dark">
                 Beta
-              </div>
+              </span>
             </div>
 
             <div className="footer__contacts flex flex-wrap flex-col md:flex-row items-start md:items-center gap-3">
