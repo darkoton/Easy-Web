@@ -14,7 +14,7 @@ export default function MainSection() {
             />
           </div>
           <div className="main__right flex-auto flex flex-col justify-center items-start relative w-full md:w-5/12">
-            <h1 className="main__title mb-4 font-bold max-sm:max-w-96 text-3xl lg:text-4xl xl:text-5xl">
+            <h1 className="main__title mb-4 font-bold max-sm:max-w-96 text-[32px] leading-[1.2] lg:text-4xl xl:text-5xl">
               Конструктор лендингов для товарного бизнеса
             </h1>
             <p className="main__description mb-6 text-base max-w-60 sm:mb-8 sm:text-xl sm:max-w-max">
@@ -23,7 +23,7 @@ export default function MainSection() {
 
             <button className="main__button btn">Начать бесплатно</button>
 
-            <div className="main__head-body absolute z-10 flex justify-end right-0 -bottom-4 lg:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
+            <div className="main__head-body absolute -z-10 flex justify-end right-0 -bottom-4 lg:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
               <img src={head} alt="" className="main__head w-3/4 lg:w-full" />
             </div>
           </div>

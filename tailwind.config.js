@@ -33,6 +33,15 @@ export default {
           margin: '0 auto',
           padding: '0 16px',
         },
+        '.title-section': {
+          fontWeight: 'bold',
+          lineHeight: '33px',
+          fontSize: '28px',
+          '@screen md': {
+            lineHeight: '48px',
+            fontSize: '40px',
+          },
+        },
       });
       addComponents({
         '.btn': {

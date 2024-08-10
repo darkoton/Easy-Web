@@ -38,7 +38,7 @@ export default function AdvantagesSection() {
     <section className="advantages mt-16 md:mt-32">
       <div className="advantages__container w-full max-w-[944px] mx-auto px-4">
         <div className="advantages__body">
-          <h2 className="advantages__title text-center font-bold text-[28px] mb-8 md:text-4xl md:mb-12">
+          <h2 className="advantages__title title-section text-center mb-8 md:mb-12">
             Наши преимущества
           </h2>
 

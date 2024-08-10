@@ -64,7 +64,7 @@ export default function SkillsSection() {
       <div className="skills__container _container">
         <div className="skills__body flex flex-col">
           <div className="skills__top flex items-center px-3 justify-center mb-8 md:px-8 md:justify-between md:mb-12">
-            <h2 className="skills__title font-bold text-2xl md:text-4xl">
+            <h2 className="skills__title title-section">
               Что умеет Easy<span className="text-mainBlue">Web</span>?
             </h2>
 

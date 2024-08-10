@@ -8,7 +8,7 @@ export default function BenefitSection() {
     <section className="benefit mt-[90px] md:mt-[140px]">
       <div className="benefit__container _container">
         <div className="benefit__body flex flex-col items-center">
-          <h2 className="benefit__title font-bold relative text-center text-[28px] leading-8 mb-8 max-w-[150px] md:text-4xl md:mb-12 md:max-w-full">
+          <h2 className="benefit__title title-section relative text-center mb-8 max-w-[150px] md:mb-12 md:max-w-full">
             С нами выгоднее
             <img
               src={head}

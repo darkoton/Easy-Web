@@ -14,7 +14,7 @@ export default function ReferralsSection() {
             />
           </div>
           <div className="referrals__right flex flex-col text-center items-center w-full lg:text-left lg:items-start lg:w-1/2">
-            <h2 className="referrals__title font-bold  mb-6 t ext-3xl lg:mb-8 lg:text-4xl">
+            <h2 className="referrals__title title-section mb-6 lg:mb-8">
               Реферальная <br /> программа
             </h2>
             <p className="referrals__descripion max-w-64 text-sm mb-8 lg:max-w-96 lg:text-xl lg:mb-9">

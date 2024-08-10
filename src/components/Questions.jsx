@@ -59,7 +59,7 @@ export default function QuestionsSection() {
     <section className="questions mt-[120px] md:mt-40 mb-[120px] md:mb-[160px]">
       <div className="questions__container _container">
         <div className="questions__body">
-          <h2 className="questions__title font-bold md:ml-8 text-[28px] md:text-[40px] mb-8 md:mb-12 text-center md:text-left">
+          <h2 className="questions__title title-section md:ml-8 mb-8 md:mb-12 text-center md:text-left">
             FAQ
           </h2>
 
