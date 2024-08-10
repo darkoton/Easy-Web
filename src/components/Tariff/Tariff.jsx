@@ -102,9 +102,9 @@ export default function TariffSection() {
               <Slider
                 pagination={true}
                 className="tariff__plans w-full"
-                adaptiv=""
-                slidesPerView={1.1}
-                spaceBetween={2}
+                classWindow="overflow-visible"
+                slidesPerView={1.15}
+                spaceBetween={3}
               >
                 {tariffs.map(tariff => (
                   <div

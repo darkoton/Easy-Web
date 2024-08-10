@@ -16,8 +16,9 @@ Slider.propTypes = {
   swipeable: propTypes.bool,
   pagination: propTypes.bool,
   spaceBetween: propTypes.number,
-  adaptiv: propTypes.string,
   reset: propTypes.bool,
+  classWrapper: propTypes.string,
+  classWindow: propTypes.string,
 };
 
 export default function Slider({
@@ -28,8 +29,10 @@ export default function Slider({
   swipeable = true,
   pagination = false,
   spaceBetween = 0,
-  adaptiv = '',
+  classWrapper = '',
+  classWindow = '',
   reset = false,
+
   ...props
 }) {
   const [slides, setSlides] = useState([]);
@@ -230,15 +233,17 @@ export default function Slider({
 
   return (
     <div className="slider w-full h-auto flex items-center" {...props}>
-      {/* {active}/{maxActive} */}
       <div
-        className="slider-window w-full h-full overflow-hidden"
+        className={[
+          'slider-window w-full h-full overflow-hidden',
+          classWindow,
+        ].join(' ')}
         ref={windowRef}
       >
         <div
           className={[
             'slider-wrapper  h-full flex transition-transform duration-[600ms] ease select-none cursor-grab',
-            adaptiv,
+            classWrapper,
           ].join(' ')}
           style={{
             transform: `translateX(${offset}%)`,

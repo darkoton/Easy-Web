@@ -111,7 +111,7 @@ export default function SkillsSection() {
             navigation={{ prev: prevRef, next: nextRef }}
             className="skills__slider relative after:hidden after:content-[''] after:absolute after:-right-2 after:top-0 after:h-full after:w-44 after:bg-gradient-to-r after:from-transparent after:to-white md:after:block"
             units={'px'}
-            adaptiv="gap-y-4 flex-wrap justify-center md:flex-nowrap md:justify-stretch"
+            classWrapper="gap-y-4 flex-wrap justify-center md:flex-nowrap md:justify-stretch"
             autoPlay={sliderAuto}
             reset={!sliderAuto}
             slidesPerView={3.5}
