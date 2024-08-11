@@ -8,7 +8,7 @@ export default function MainSection() {
     <main className="main mt-10">
       <div className="main__container _container">
         <div className="main__body flex justify-center gap-x-2 gap-y-9 items-center flex-col-reverse md:flex-row">
-          <div className="main__left relative flex justify-center w-full md:w-6.5/12 before:absolute before:blur-[140px] before:-left-1/2 before:translate-x-1/2 before:bottom-0 before:content-[''] before:w-72 before:h-72 before:rounded-full before:bg-[#99B8FF] before:-z-10">
+          <div className="main__left relative flex justify-center w-full md:w-6.5/12 before:absolute before:blur-[130px] before:-left-1/2 before:translate-x-1/2 before:bottom-0 before:content-[''] before:w-72 before:h-72 before:rounded-full before:bg-[#99B8FF] before:-z-10">
             <img
               src={laptop}
               alt=""
@@ -30,7 +30,7 @@ export default function MainSection() {
 
             <Button className="main__button !px-6">Начать бесплатно</Button>
 
-            <div className="main__head-body absolute -z-10 flex justify-end -right-5 lg:right-12 -bottom-4 md:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
+            <div className="main__head-body absolute -z-10 flex justify-end -right-5 lg:right-12 -bottom-4 md:-bottom-20 after:blur-[70px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
               <img
                 src={head}
                 alt=""

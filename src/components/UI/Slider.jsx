@@ -78,6 +78,7 @@ export default function Slider({
         }
 
         disableNavigation(active + 1);
+
         return Math.max(newOffset, maxOffset);
       });
     },

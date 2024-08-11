@@ -45,7 +45,7 @@ export default function SkillsSection() {
   useEffect(() => {
     function checkWindow() {
       setTimeout(() => {
-        if (window.outerWidth <= 1280) {
+        if (window.outerWidth <= 1023) {
           setSliderAuto(false);
         } else {
           setSliderAuto(true);
