@@ -21,16 +21,16 @@ export default function MainSection() {
             />
           </div>
           <div className="main__right flex-auto flex flex-col justify-center items-start relative w-full md:w-5/12">
-            <h1 className="main__title mb-4 font-bold max-sm:max-w-96 text-[32px] leading-[1.2] lg:text-4xl xl:text-5xl">
+            <h1 className="main__title mb-4 font-bold max-sm:max-w-96 text-[32px] leading-[38px] lg:text-4xl lg:leading-[43px] xl:text-5xl xl:leading-[58px]">
               Конструктор лендингов для товарного бизнеса
             </h1>
-            <p className="main__description mb-6 text-base leading-[19px] max-w-60 sm:mb-8 sm:text-xl sm:max-w-max">
+            <p className="main__description mb-6 text-base leading-[19px] max-w-60 sm:leading-[24px] sm:mb-8 sm:text-xl sm:max-w-max">
               Зарабатывайте больше, создавайте за минуты
             </p>
 
             <Button className="main__button !px-6">Начать бесплатно</Button>
 
-            <div className="main__head-body absolute -z-10 flex justify-end -right-5 -bottom-4 md:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
+            <div className="main__head-body absolute -z-10 flex justify-end -right-5 lg:right-12 -bottom-4 md:-bottom-20 after:blur-[110px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
               <img
                 src={head}
                 alt=""

@@ -9,10 +9,10 @@ Accordion.propTypes = {
 
 export default function Accordion({ active, onClick, title, text }) {
   return (
-    <div className="rounded-[24px] bg-cardGray">
+    <div className="rounded-[30px] flex flex-col px-5 py-3 md:px-8 md:py-6 bg-cardGray gap-y-3 md:gap-y-4">
       <h3>
         <button
-          className="group flex gap-x-3 w-full justify-between items-center px-5 py-3 md:px-8 md:py-4 leading-[21px] md:leading-[28px] text-left text-lg md:text-2xl font-bold"
+          className="group flex gap-x-3 w-full justify-between items-center leading-[21px] md:leading-[28px] text-left text-lg md:text-2xl font-bold"
           onClick={onClick}
         >
           {title}
@@ -38,7 +38,7 @@ export default function Accordion({ active, onClick, title, text }) {
         </button>
       </h3>
       <div className={[active ? 'visible' : 'hidden'].join(' ')}>
-        <p className="text-sm md:text-base pb-[19px] px-5 md:pb-6 md:px-8 ">
+        <p className="text-sm pb-[7px] md:pb-0 md:text-base leading-[20px] md:leading-[22px]">
           {text}
         </p>
       </div>
