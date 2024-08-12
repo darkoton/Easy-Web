@@ -80,7 +80,6 @@ export default function Header() {
                   className="header__select"
                 />
                 <div className="header__buttons flex items-center gap-x-2 max-[950px]:hidden">
-                  <NavLink to={'/test'}>hello</NavLink>
                   <Link to="/Easy-Web/login">
                     <ButtonOutlined className="header__button !px-4">
                       Вход
