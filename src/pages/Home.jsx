@@ -1,3 +1,4 @@
+import Header from '@/components/Header';
 import MainSection from '@/components/Main';
 import SkillsSection from '@/components/Skills';
 import ReferralsSection from '@/components/Referrals';
@@ -9,6 +10,7 @@ import QuestionsSection from '@/components/Questions';
 export default function HomePage() {
   return (
     <>
+      <Header />
       <MainSection />
       <SkillsSection />
       <ReferralsSection />

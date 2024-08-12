@@ -1,11 +1,12 @@
 import laptop from '@/assets/img/main/laptop.webp';
 import laptopMob from '@/assets/img/main/laptop-mob.webp';
 import head from '@/assets/img/main/head.webp';
-import Button from '@/components/UI/Button';
+import { Button } from '@/components/UI/Button';
+import { Link } from 'react-router-dom';
 
 export default function MainSection() {
   return (
-    <main className="main mt-10">
+    <main className="main mt-[90px] min-[950px]:mt-[120px]">
       <div className="main__container _container">
         <div className="main__body flex justify-center gap-x-2 gap-y-9 items-center flex-col-reverse md:flex-row">
           <div className="main__left relative flex justify-center w-full md:w-6.5/12 before:absolute before:blur-[130px] before:-left-1/2 before:translate-x-1/2 before:bottom-0 before:content-[''] before:w-72 before:h-72 before:rounded-full before:bg-[#99B8FF] before:-z-10">
@@ -28,7 +29,9 @@ export default function MainSection() {
               Зарабатывайте больше, создавайте за минуты
             </p>
 
-            <Button className="main__button !px-6">Начать бесплатно</Button>
+            <Link to="/Easy-Web/Login">
+              <Button className="main__button !px-6">Начать бесплатно</Button>
+            </Link>
 
             <div className="main__head-body absolute -z-10 flex justify-end -right-5 lg:right-12 -bottom-4 md:-bottom-20 after:blur-[70px] after:border-[1px] after:bg-[#B3CAFF] after:absolute  after:-right-16 after:bottom-0 after:content-[''] after:w-48 after:h-48 after:rounded-full after:-z-10">
               <img

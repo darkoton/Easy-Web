@@ -1,10 +1,12 @@
 import laptop from '@/assets/img/auth/laptop.webp';
-import Button from '@/components/UI/Button';
+import { Button } from '@/components/UI/Button';
+import Header from '@/components/Header';
 
 export default function LoginPage() {
   return (
     <>
-      <section className="login lg:mt-40 pb-[66px] lg:pb-[120px] w-full relative">
+      <Header />
+      <section className="login mt-[90px] min-[950px]:mt-[120px] pb-[66px] lg:pb-[120px] w-full relative">
         <div className="login__container _container">
           <div className="login__body flex flex-col">
             <div className="login__main flex items-center justify-center lg:justify-stretch gap-x-16">

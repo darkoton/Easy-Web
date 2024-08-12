@@ -2,9 +2,9 @@ import yes from '@/assets/img/tariff/yes.svg';
 import no from '@/assets/img/tariff/no.svg';
 import tariffs from './tariff.js';
 import Slider from '@/components/UI/Slider';
-import Button from '@/components/UI/Button';
-
+import { Button } from '@/components/UI/Button';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const tabs = [
   {
@@ -199,7 +199,9 @@ export default function TariffSection() {
             )}
           </div>
 
-          <Button className="tariff__button">Попробовать бесплатно</Button>
+          <Link to="/Easy-Web/login">
+            <Button className="tariff__button">Попробовать бесплатно</Button>
+          </Link>
         </div>
       </div>
     </section>

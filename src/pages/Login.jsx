@@ -1,16 +1,17 @@
+import Header from '@/components/Header';
 import laptop from '@/assets/img/auth/laptop.webp';
 import telegram from '@/assets/img/auth/telegram.svg';
 import view from '@/assets/img/auth/view.svg';
 import noView from '@/assets/img/auth/no-view.svg';
 import { useState } from 'react';
-import Button from '@/components/UI/Button';
-
+import { Button } from '@/components/UI/Button';
 export default function LoginPage() {
   const [viewPassword, setViewPassword] = useState(false);
 
   return (
     <>
-      <section className="login lg:mt-40 pb-[66px] lg:pb-[120px] w-full relative">
+      <Header />
+      <section className="login mt-[90px] min-[950px]:mt-[120px] pb-[66px] lg:pb-[120px] w-full relative">
         <div className="login__container _container">
           <div className="login__body flex flex-col">
             <div className="login__main flex items-center justify-center lg:justify-stretch gap-x-16">
