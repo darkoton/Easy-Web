@@ -4,16 +4,17 @@ import path from 'path';
 import favicons from './scripts/favicons';
 
 const __dirname = path.resolve();
+const basePath = '/Easy-Web/';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   // base: '/',
-  base: '/Easy-Web/',
+  base: basePath,
   plugins: [
     react(),
     {
       name: 'postbuild-commands', // the name of your custom plugin. Could be anything.
-      closeBundle: favicons,
+      closeBundle: () => favicons(basePath),
     },
   ],
   resolve: {

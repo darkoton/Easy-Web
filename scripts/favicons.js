@@ -5,7 +5,7 @@ import path from 'path';
 
 const __dirname = path.resolve();
 
-export default async function generateFavicon() {
+export default async function generateFavicon(filePath = '/') {
   console.log('Generate favicons...');
 
   const files = await readdirSync(path.join(__dirname, 'public', 'favicons'));
@@ -22,7 +22,7 @@ export default async function generateFavicon() {
 
   // Configuration (see above in the README file).
   const configuration = {
-    path: '/favicons',
+    path: filePath + 'favicons',
     appName: null,
     appShortName: null,
     appDescription: null,
